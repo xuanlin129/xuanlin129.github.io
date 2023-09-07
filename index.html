@@ -30,7 +30,8 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li v-for="navItem in navItems" class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" @click="navItemSrc(navItem.href)">{{
+                <a class="nav-link active" aria-current="page" @click="navItemSrc(navItem.href)"
+                  style="cursor: pointer;">{{
                   navItem.text }}</a>
               </li>
             </ul>

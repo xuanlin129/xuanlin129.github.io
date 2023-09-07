@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
 #nav {
+  height: 60px;
   background: rgba(186, 185, 183, 0.9);
   color: #fff;
 }
@@ -168,12 +169,13 @@
   color: #fff;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
+:root {
+  scroll-padding-top: 60px;
 }
 
+.container {
+  max-width: 1140px;
+}
 .h1-title {
   font-size: 32px;
   border-bottom: 5px solid #CCD9E2;
