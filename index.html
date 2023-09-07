@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css'
+    integrity='sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=='
+    crossorigin='anonymous' />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/all.css">
+  <link rel="shortcut icon" href="./images/icon-man.png" type="image/x-icon">
+  <title>Xuan Lin</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="fixed-top">
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <span id="navTitle" class="navbar-brand mb-0 h1">Tzu-Hsuan Lin</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li v-for="navItem in navItems" class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" @click="navItemSrc(navItem.href)">{{
+                  navItem.text }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="welcome">
+        <div class="container-fuild h-100 d-flex justify-content-center align-items-center flex-column">
+          <h1 id="typer"></h1>
+          <h6>Tzu-Hsuan Lin</h6>
+          <a href="#about">
+            <iconify-icon icon="ep:arrow-down-bold"></iconify-icon>
+          </a>
+        </div>
+      </section>
+      <section id="about">
+        <div class="container section-py">
+          <div class="row align-items-center">
+            <div class="col-12 text-center mb-5">
+              <span class="h1-title">ABOUT</span>
+            </div>
+            <div class="col-12 col-lg-6 text-center">
+              <img id="personal-img" class="w-75 rounded-3" src="./images/section_02.jpg" alt="">
+            </div>
+            <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+              <h2 class="text-center text-lg-start">林子軒</h2>
+              <p>
+                我畢業於淡江大學，個性樂觀，善於溝通及團隊合作，也具有獨立解決問題的能力，大學及研究所均有校外實習的經驗，能迅速適應工作環境，工作中會遇到許多難題，將其逐一解決會使我有成就感。
+              </p>
+              <br>
+              <p>在學期間有修過網頁相關課程且有濃厚興趣，畢業後參加為期半年的專業訓練課程，未來會學習其他前端框架及後端相關的技能，加強自身的能力，成為全方位的人才。</p>
+              <h5 class="text-md-start d-inline-block position-relative">Skills</h5>
+              <span class="d-flex justify-content-center flex-wrap border border-secondary rounded-3 py-4">
+                <template v-for="icon in skills">
+                  <img class="me-1 mb-1" :src=icon.img alt="icon.name" width="40" height="40">
+                </template>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="ability">
+        <div class="container section-py">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <span class="h1-title">ABILITY</span>
+            </div>
+            <div v-for="ability in abilities" class="col-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card p-4">
+                <div class="iconBox mx-auto d-flex justify-content-center align-items-center">
+                  <iconify-icon :icon="ability.icon"></iconify-icon>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{ ability.title }}</h5>
+                  <p class="card-text text-center">{{ ability.content }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="resume">
+        <div class="container section-py">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <span class="h1-title">RESUME</span>
+            </div>
+            <div id="datebox" class="col-12 d-md-flex flex-column flex-md-wrap justify-content-between">
+              <div class="col-12 mb-4 mb-sm-0 col-md-5 offset-md-1">
+                <h3>簡介</h3>
+                <div class="resume-text">
+                  <h6>林子軒 Tzu-Hsuan</h6>
+                  <p>
+                    具備HTML、CSS、JavaScript、Vue.js、API串接資料庫等技能，可以獨立完成RWD網頁與互動腳本的撰寫，建置前後端整合的網頁。
+                  </p>
+                  <ul>
+                    <li>New Taipei City, Taiwan</li>
+                    <li>xuan.lin129@gmail.com</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 mb-4 mb-sm-0 col-md-5 order-md-1 offset-md-1">
+                <h3>學歷</h3>
+                <div class="resume-text pb-4">
+                  <h6>前端網頁開發技術(青年專班)/泰山職業訓練中心</h6>
+                  <h6 class="dateline mb-2">2023/03-2023/08</h6>
+                  <p>經過為期半年的專業訓練，以第三名的成績畢業
+                  </p>
+                </div>
+                <div class="resume-text pb-4">
+                  <h6>化學工程與材料工程碩士/淡江大學</h6>
+                  <h6 class="dateline mb-2">2020/09-2022/07</h6>
+                  <ul>
+                    <li>薄膜分離程序</li>
+                    <li>薄膜過濾</li>
+                  </ul>
+                </div>
+                <div class="resume-text">
+                  <h6>化學工程與材料工程學士/淡江大學</h6>
+                  <h6 class="dateline mb-2">2016/09-2020/06</h6>
+                  <ul>
+                    <li>moldex3D 模流分析</li>
+                    <li>高分子材料應用及實務</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 mb-4 mb-sm-0 col-md-5 offset-md-1">
+                <h3>工作經歷</h3>
+                <div class="resume-text pb-4">
+                  <h6>化工工程師/永光化學</h6>
+                  <h6 class="dateline mb-2">2021/07-2022/06</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="portfolio">
+        <div class="container section-py">
+          <div class="row justify-content-evenly">
+            <div class="col-12 text-center mb-5">
+              <span class="h1-title">PORTFILIO</span>
+            </div>
+            <div class="col-12 swiper-bg">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div v-for="img in swipers" class="swiper-slide">
+                    <img :src="img.src" style="width: 100%;">
+                  </div>
+                </div>
+                <div class="swiper-button-next d-none d-sm-flex"></div>
+                <div class="swiper-button-prev d-none d-sm-flex"></div>
+              </div>
+            </div>
+            <div class="col-12 mt-4 text-center text-sm-start">
+              <h2>專題 | 煮飯研究所</h2>
+              <h4>概念發想</h4>
+              <p>煮飯研究所是一個與料理緊密連結的空間，結合多樣化與食物接觸的形式，以服務內容、餐點介紹及線上購物三個方向進行網頁設計。</p>
+            </div>
+            <div class="col-12 col-md-5 func-box mb-2 mb-md-0">
+              <h5 class="text-center mb-4">前台功能</h5>
+              <ul>
+                <li>會員登入/註冊</li>
+                <li>商品加入購物車/送出訂單功能</li>
+                <li>查看/編輯會員資料</li>
+                <li>查看訂單</li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-5 func-box">
+              <h5 class="text-center mb-4">後台功能</h5>
+              <ul>
+                <li>特定帳號可進入後台</li>
+                <li>會員管理</li>
+                <li>新增/編輯商品</li>
+                <li>關鍵字查詢商品</li>
+                <li>訂單管理及查看明細</li>
+              </ul>
+            </div>
+            <div class="col-12 text-center my-2">
+              <a href="https://xuanlin129.github.io/gohancooking/" target="_blank" class="btn px-3">參觀網站</a>
+            </div>
+            <hr>
+            <h2>My Work</h2>
+            <div v-for="pj in projects" class="col-12 col-md-6 col-lg-4 mt-4">
+              <div class="card p-4" style="height: 400px;">
+                <img :src="pj.img" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{ pj.name }}</h5>
+                  <p class="card-text">{{ pj.content }}</p>
+                  <p class="card-text">使用技術：{{ pj.tech }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <a href="#" id="top" class="position-fixed d-flex justify-content-center align-items-center">
+        <iconify-icon icon="ep:arrow-up-bold"></iconify-icon>
+      </a>
+    </main>
+    <footer id="footer">
+      <div class="container section-py">
+        <div class="row text-center">
+          <div class="col-12">
+            <h1>TZU-HSUAN LIN</h1>
+          </div>
+          <div class="col-12 d-flex justify-content-center my-4">
+            <a v-for="info in infos" :href="info.src" target="_blank" class="d-inline mx-2">
+              <iconify-icon :icon="info.icon"></iconify-icon>
+            </a>
+          </div>
+          <div class="col-12 text-center">
+            &copy;Copyright 2023. All Rights Reserved<br>
+            Designed by Tzu-Hsuan,Lin
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- bootstrap -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js'
+    integrity='sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=='
+    crossorigin='anonymous'></script>
+  <!-- vue -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.min.js'
+    integrity='sha512-Wbf9QOX8TxnLykSrNGmAc5mDntbpyXjOw9zgnKql3DgQ7Iyr5TCSPWpvpwDuo+jikYoSNMD9tRRH854VfPpL9A=='
+    crossorigin='anonymous'></script>
+  <!-- 動態文字輸入 -->
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <!-- icon -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <!-- swiper 輪播 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
