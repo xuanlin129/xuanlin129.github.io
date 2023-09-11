@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto mb-lg-0">
               <li v-for="navItem in navItems" class="nav-item">
                 <a class="nav-link active" aria-current="page" @click="navItemSrc(navItem.href)"
                   style="cursor: pointer;">{{
@@ -44,7 +44,7 @@
         <div class="container-fuild h-100 d-flex justify-content-center align-items-center flex-column">
           <h1 id="typer"></h1>
           <h6>Tzu-Hsuan Lin</h6>
-          <a href="#about">
+          <a @click="navItemSrc('#about')" style="cursor: pointer;">
             <iconify-icon icon="ep:arrow-down-bold"></iconify-icon>
           </a>
         </div>
@@ -173,30 +173,34 @@
               <h4>概念發想</h4>
               <p>煮飯研究所是一個與料理緊密連結的空間，結合多樣化與食物接觸的形式，以服務內容、餐點介紹及線上購物三個方向進行網頁設計。</p>
             </div>
-            <div class="col-12 col-md-5 func-box mb-2 mb-md-0">
-              <h5 class="text-center mb-4">前台功能</h5>
-              <ul>
-                <li>會員登入/註冊</li>
-                <li>商品加入購物車/送出訂單功能</li>
-                <li>查看/編輯會員資料</li>
-                <li>查看訂單</li>
-              </ul>
+            <div class="col-12 col-md-5 mb-2 mb-md-0">
+              <div class="func-box">
+                <h5 class="text-center mb-4">前台功能</h5>
+                <ul>
+                  <li>會員登入/註冊</li>
+                  <li>商品加入購物車/送出訂單功能</li>
+                  <li>查看/編輯會員資料</li>
+                  <li>查看訂單</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-12 col-md-5 func-box">
-              <h5 class="text-center mb-4">後台功能</h5>
-              <ul>
-                <li>特定帳號可進入後台</li>
-                <li>會員管理</li>
-                <li>新增/編輯商品</li>
-                <li>關鍵字查詢商品</li>
-                <li>訂單管理及查看明細</li>
-              </ul>
+            <div class="col-12 col-md-5 mb-2">
+              <div class="func-box">
+                <h5 class="text-center mb-4">後台功能</h5>
+                <ul>
+                  <li>特定帳號可進入後台</li>
+                  <li>會員管理</li>
+                  <li>新增/編輯商品</li>
+                  <li>關鍵字查詢商品</li>
+                  <li>訂單管理及查看明細</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-12 text-center my-2">
+            <div class="col-12 text-center my-3">
               <a href="https://xuanlin129.github.io/gohancooking/" target="_blank" class="btn px-3">參觀網站</a>
             </div>
             <hr>
-            <h2>My Work</h2>
+            <h2 class="text-center text-md-left">My Work</h2>
             <div v-for="pj in projects" class="col-12 col-md-6 col-lg-4 mt-4">
               <div class="card p-4" style="height: 400px;">
                 <img :src="pj.img" class="card-img-top">
