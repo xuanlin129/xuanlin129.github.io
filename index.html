@@ -203,7 +203,9 @@
             <h2 class="text-center text-md-left">My Work</h2>
             <div v-for="pj in projects" class="col-12 col-md-6 col-lg-4 mt-4">
               <div class="card p-4" style="height: 400px;">
-                <img :src="pj.img" class="card-img-top">
+                <a :href="pj.src" target="_blank">
+                  <img :src="pj.img" class="card-img-top">
+                </a>
                 <div class="card-body">
                   <h5 class="card-title">{{ pj.name }}</h5>
                   <p class="card-text">{{ pj.content }}</p>

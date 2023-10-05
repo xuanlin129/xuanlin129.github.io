@@ -44,12 +44,12 @@ createApp({
     ])
 
     const projects = ref([
-      {name: '時鐘',content: '設定時間，時間到時會響鈴。', tech: 'HTML, JavaScript',img: './images/project_01.png'},
-      {name: '計算機',content: '計算機商品頁，可切換顏色及旋轉物件，計算機本身有運算功能。', tech: 'HTML, JavaScript',img: './images/project_02.png'},
-      {name: '打地鼠',content: '打地鼠遊戲，在時間內打中地鼠，一隻加一分。', tech: 'HTML, jQuery',img: './images/project_03.png'},
-      {name: '翻牌',content: '翻牌配對遊戲，當相同的圖片配對成功時，圖片會消失。', tech: 'HTML, jQuery',img: './images/project_04.png'},
-      {name: '番茄鐘',content: '提供使用者紀錄個人待辦事項。可於頁面輸入清單，也具編輯、刪除功能。除了以上功能，還可以選擇鬧鈴以及開關小鈴鐺，還可以下載成app在桌面上。', tech: 'Vue.js, vuetify',img: './images/project_05.png'},
-      {name: 'R&CO',content: '使用 Bootstrap 切版的 RWD 響應式網頁。', tech: 'bootstrap',img: './images/project_06.png'},
+      {name: '時鐘',content: '設定時間，時間到時會響鈴。', tech: 'HTML, JavaScript',img: './images/project_01.png',src: 'https://xuanlin129.github.io/clock/'},
+      {name: '計算機',content: '計算機商品頁，可切換顏色及旋轉物件，計算機本身有運算功能。', tech: 'HTML, JavaScript',img: './images/project_02.png',src: 'https://xuanlin129.github.io/calculator/'},
+      {name: '打地鼠',content: '打地鼠遊戲，在時間內打中地鼠，一隻加一分。', tech: 'HTML, jQuery',img: './images/project_03.png',src: 'https://xuanlin129.github.io/whack-a-mole/'},
+      {name: '翻牌',content: '翻牌配對遊戲，當相同的圖片配對成功時，圖片會消失。', tech: 'HTML, jQuery',img: './images/project_04.png',src: 'https://xuanlin129.github.io/card/'},
+      {name: '番茄鐘',content: '提供使用者紀錄個人待辦事項。可於頁面輸入清單，也具編輯、刪除功能。除了以上功能，還可以選擇鬧鈴以及開關小鈴鐺，還可以下載成app在桌面上。', tech: 'Vue.js, vuetify',img: './images/project_05.png',src: 'https://xuanlin129.github.io/pomodoro/#/'},
+      {name: 'R&CO',content: '使用 Bootstrap 切版的 RWD 響應式網頁。', tech: 'bootstrap',img: './images/project_06.png',src: 'https://xuanlin129.github.io/R-CO/'},
     ])
 
     const infos = ref([
