@@ -1,0 +1,128 @@
+#nav
+  background: rgba(186,185,183,0.9)
+  color: #fff
+  #navTitle
+    font-family: Satisfy
+  button
+    border: none
+
+#welcome
+  height: 100vh
+  background: linear-gradient(rgba(0, 0,0,0.5), rgba(0, 0,0,0.5)) , url('../images/section_01.jpg') no-repeat center/cover
+  color: #fff
+  iconify-icon
+    font-size: 48px
+    color: #fff
+    opacity: 0.5
+
+#about
+  .h1-title::after
+    content: 'ABOUT'
+  #personal-img
+    max-width: 400px
+  h5
+    bottom: -20px
+    left: 50%
+    transform: translateX(-50%)
+    background: #fff
+  @include lg
+    h5
+      left: 10%
+
+#ability
+  background: #e6e3dd
+  bac
+  .h1-title::after
+    content: 'ABILITY'
+
+  .card
+    height: 280px
+    border: none
+    box-shadow: 0 0 5px #ccc
+  .iconBox
+    width: 100px
+    height: 100px
+    background: #285185
+    color: #fff
+    font-size: 48px
+    border-radius: 50%
+  @include md
+    .card
+      height: 230px
+  @include lg
+    .card
+      height: 280px
+
+#resume
+  .h1-title::after
+    content: 'RESUME'
+  h3
+    color: #285185
+    margin-bottom: 16px
+  .resume-text
+    border-left: 2px solid #ccd9e2
+    padding: 0 20px
+    position: relative
+    &::before
+      content: ''
+      width: 1rem
+      height: 1rem
+      background: #ccd9e2
+      border-radius: 50%
+      position: absolute
+      left: 0
+      top: 0
+      transform: translateX(-9px)
+  .dateline
+    display: inline-block
+    padding: 5px
+    border-radius: 5px
+    background: #d9d9d9
+  @include md
+    #datebox
+      height: 485px
+  @include lg
+    #datebox
+      height: 445px
+
+#portfolio
+  .h1-title::after
+    content: 'PORTFOLIO'
+  .mySwiper
+    border-radius: 2rem
+    .swiper-button-next,
+    .swiper-button-prev
+      width: 50px
+      height: 50px
+      color: #fff
+      background: rgba(0,0,0,0.5)
+      font-size: 20px
+      border-radius: 50%
+      &::after
+        font-size: 20px
+  .btn
+    background: #285185
+    color: #fff
+  .func-box
+    min-height: 230px
+    border: 1px solid #ccd9e2
+    border-radius: 2rem
+    padding: 20px
+    background: linear-gradient(#ccd9e2 25%,#fff 25%)
+  h2
+    color: #285185
+  .card
+    position: relative
+    .card-text:last-child
+      position: absolute
+      bottom: 3%
+
+#footer
+  background: #bcb9b7
+  color: #fff
+  h1
+    font-size: 36px
+    font-weight: 700
+  iconify-icon
+    font-size: 28px
+    color: #fff
