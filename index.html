@@ -216,7 +216,7 @@
           </div>
         </div>
       </section>
-      <a href="#" id="top" class="position-fixed d-flex justify-content-center align-items-center">
+      <a href="#" id="top" class="position-fixed d-flex justify-content-center align-items-center" style="display: none;">
         <iconify-icon icon="ep:arrow-up-bold"></iconify-icon>
       </a>
     </main>
@@ -257,6 +257,20 @@
 
 
   <script src="./app.js"></script>
+  <script>
+    const top = document.querySelector('#top')
+    const about = document.querySelector('#about')
+
+    $(window).on("scroll", function () {
+        var winT = $("html").scrollTop();
+        var boxH = about.offsetTop
+        if (winT > boxH) {
+          top.style.display = 'block'
+        } else {
+          top.style.display = 'none'
+        }
+    });
+  </script>
 </body>
 
 </html>
