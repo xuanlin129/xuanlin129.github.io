@@ -216,7 +216,7 @@
           </div>
         </div>
       </section>
-      <a href="#" id="top" class="position-fixed d-flex justify-content-center align-items-center" style="display: none !important;">
+      <a href="#" id="top" class="position-fixed d-flex justify-content-center align-items-center" style="opacity: 0;">
         <iconify-icon icon="ep:arrow-up-bold"></iconify-icon>
       </a>
     </main>
@@ -265,9 +265,9 @@
       let scrollPosition = window.scrollY
       let boxH = ability.offsetTop
       if (scrollPosition > boxH) {
-          topLink.style.display = 'block'
+          topLink.style.opacity = '0.8'
         } else {
-          topLink.style.display = 'none'
+          topLink.style.opacity = '0'
         }
     })
   </script>
