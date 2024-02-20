@@ -259,11 +259,11 @@
   <script src="./app.js"></script>
   <script>
     const topLink = document.querySelector('#top')
-    const about = document.querySelector('#about')
+    const ability = document.querySelector('#ability')
 
     document.addEventListener('scroll', () => {
       let scrollPosition = window.scrollY
-      let boxH = about.offsetTop
+      let boxH = ability.offsetTop
       if (scrollPosition > boxH) {
           topLink.style.display = 'block'
         } else {
