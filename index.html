@@ -20,7 +20,7 @@
 <body>
   <div id="app">
     <header class="fixed-top">
-      <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark" style="background: transparent">
         <div class="container">
           <span id="navTitle" class="navbar-brand mb-0 h1">Tzu-Hsuan Lin</span>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -259,6 +259,7 @@
   <script src="./app.js"></script>
   <script>
     const topLink = document.querySelector('#top')
+    const nav = document.querySelector('#nav')
     const about = document.querySelector('#about')
 
     document.addEventListener('scroll', () => {
@@ -267,9 +268,11 @@
       if (scrollPosition > boxH) {
           topLink.style.opacity = '0.8'
           topLink.style.pointerEvents = 'auto'
+          nav.style.background = 'rgba(186, 185, 183, 0.9)'
         } else {
           topLink.style.opacity = '0'
           topLink.style.pointerEvents = 'none'
+          nav.style.background = 'transparent'
         }
     })
   </script>
