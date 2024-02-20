@@ -216,7 +216,7 @@
           </div>
         </div>
       </section>
-      <a href="#" id="top" class="position-fixed d-flex justify-content-center align-items-center" style="opacity: 0; transition: all 0.8s">
+      <a href="#" id="top" class="position-fixed d-flex justify-content-center align-items-center" style="pointer-events: none; opacity: 0; transition: all 0.8s">
         <iconify-icon icon="ep:arrow-up-bold"></iconify-icon>
       </a>
     </main>
@@ -266,8 +266,10 @@
       let boxH = ability.offsetTop
       if (scrollPosition > boxH) {
           topLink.style.opacity = '0.8'
+          topLink.style.pointerEvents = 'auto'
         } else {
           topLink.style.opacity = '0'
+          topLink.style.pointerEvents = 'none'
         }
     })
   </script>
