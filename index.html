@@ -259,11 +259,11 @@
   <script src="./app.js"></script>
   <script>
     const topLink = document.querySelector('#top')
-    const ability = document.querySelector('#ability')
+    const about = document.querySelector('#about')
 
     document.addEventListener('scroll', () => {
       let scrollPosition = window.scrollY
-      let boxH = ability.offsetTop
+      let boxH = about.offsetTop
       if (scrollPosition > boxH) {
           topLink.style.opacity = '0.8'
           topLink.style.pointerEvents = 'auto'
