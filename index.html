@@ -258,18 +258,18 @@
 
   <script src="./app.js"></script>
   <script>
-    const top = document.querySelector('#top')
+    const topLink = document.querySelector('#top')
     const about = document.querySelector('#about')
 
-    $(window).on("scroll", function () {
-        var winT = $("html").scrollTop();
-        var boxH = about.offsetTop
-        if (winT > boxH) {
-          top.style.display = 'block'
+    document.addEventListener('scroll', () => {
+      let scrollPosition = window.scrollY
+      let boxH = about.offsetTop
+      if (scrollPosition > boxH) {
+          topLink.style.display = 'block'
         } else {
-          top.style.display = 'none'
+          topLink.style.display = 'none'
         }
-    });
+    })
   </script>
 </body>
 
