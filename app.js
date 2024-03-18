@@ -44,7 +44,7 @@ createApp({
     ])
 
     const projects = ref([
-      {name: '時鐘',content: '設定時間，時間到時會響鈴。', tech: 'HTML, JavaScript',img: './images/project_01.png',src: 'https://xuanlin129.github.io/flip_clock/'},
+      {name: '時鐘',content: '翻頁特效的時鐘，可切換深淺主題。', tech: 'HTML, JavaScript',img: './images/project_01.png',src: 'https://xuanlin129.github.io/flip_clock/'},
       {name: '計算機',content: '計算機，如同一般計算機可以使用，有紀錄計算歷程的功能。', tech: 'HTML, JavaScript',img: './images/project_02.png',src: 'https://xuanlin129.github.io/calculate/'},
       {name: '打地鼠',content: '打地鼠遊戲，在時間內打中地鼠，一隻加一分。', tech: 'HTML, jQuery',img: './images/project_03.png',src: 'https://xuanlin129.github.io/whack-a-mole/'},
       {name: '翻牌',content: '翻牌配對遊戲，當相同的圖片配對成功時，圖片會消失。', tech: 'HTML, jQuery',img: './images/project_04.png',src: 'https://xuanlin129.github.io/card/'},
