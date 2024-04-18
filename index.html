@@ -24,10 +24,45 @@
   <meta property="og:image" content="../images/section_01.jpg">
   <meta property="og:title" content="Xuan Lin">
   <meta property="og:description" content="林子軒的個人網頁">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    .dot-s,
+    .dot-l {
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .dot-s {
+      width: 10px;
+      height: 10px;
+      background: #61656d;
+      opacity: 0.8;
+      z-index: 1;
+      transition: all .1s ease;
+    }
+
+    .dot-l {
+      width: 30px;
+      height: 30px;
+      background: #beccd3;
+      transition: all .15s ease;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
+    <div class="dot-s"></div>
+    <div class="dot-l"></div>
     <header class="fixed-top">
       <nav id="nav" class="navbar navbar-expand-lg navbar-dark" style="background: transparent; transition: all 0.5s ease-in-out 0s;">
         <div class="container">
@@ -284,6 +319,17 @@
           nav.style.background = 'transparent'
         }
     })
+  </script>
+  <script>
+    let dotSmall = document.querySelector('.dot-s');
+    let dotLarge = document.querySelector('.dot-l');
+    document.addEventListener("mousemove", function (e) {
+
+      dotSmall.style.left = e.pageX + "px";
+      dotSmall.style.top = e.pageY + "px";
+      dotLarge.style.left = e.pageX + "px";
+      dotLarge.style.top = e.pageY + "px";
+    });
   </script>
 </body>
 
