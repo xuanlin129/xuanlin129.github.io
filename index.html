@@ -304,8 +304,6 @@
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <!-- swiper 輪播 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <!-- 捲動動畫 -->
-  <script src="./js/lib/locomotive-scroll.min.js"></script>
 
 
   <script src="./app.js"></script>
@@ -337,13 +335,6 @@
       dotSmall.style.top = e.pageY + "px";
       dotLarge.style.left = e.pageX + "px";
       dotLarge.style.top = e.pageY + "px";
-    });
-  </script>
-
-  <script>
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
     });
   </script>
 </body>
