@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="您好，我是林子軒，一名熱愛程式開發的創作者，這裡主要呈現我的個人履歷與專案作品，若您對我的作品感興趣，歡迎隨時聯繫我！">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Xuan Lin">
+  <meta property="og:description" content="您好，我是林子軒，一名熱愛程式開發的創作者，這裡主要呈現我的個人履歷與專案作品，若您對我的作品感興趣，歡迎隨時聯繫我！">
+  <meta property="og:url" content="https://xuanlin129.github.io/" />
+  <meta property="og:image" content="./src/images/web-view.jpg">
+  <link rel="icon" href="./src/images/favicon.ico" type="image/x-icon">
+  <title>Xuan Lin</title>
+
+  <!-- CDN -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css' />
+  <link rel="stylesheet" href="./css/locomotive-scroll.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- web loading -->
+  <div id="web-loading" class="fixed-top d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <img src="./src/images/logo-xuan.png" alt="">
+      <div class="loading mt-3">
+        <span data-text="L">L</span>
+        <span data-text="O">O</span>
+        <span data-text="A">A</span>
+        <span data-text="D">D</span>
+        <span data-text="I">I</span>
+        <span data-text="N">N</span>
+        <span data-text="G">G</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主背景 -->
+  <div class="bg-main">
+    <div class="bg-base"></div>
+    <div class="bg-texture"></div>
+  </div>
+
+  <!-- header -->
+  <header id="header" class="fixed-top py-4">
+    <div class="container py-2 d-flex justify-content-between align-items-center">
+      <a class="navbar-brand d-flex align-items-baseline py-1" href="#">
+        <img src="./src/images/logo-name.png" alt="">
+      </a>
+      <span class="menu-toggle"><iconify-icon icon="garden:menu-fill-16"></iconify-icon></span>
+    </div>
+  </header>
+
+  <!-- menu -->
+  <nav id="menu" class="fixed-top py-4 d-flex justify-content-end align-items-center">
+    <div class="inner p-4">
+      <img src="./src/images/logo-name.png" alt="">
+      <ul>
+        <li><a href="#about" data-type="menu-close">ABOUT</a></li>
+        <li><a href="#portfolio" data-type="menu-close">PORTFOLIO</a></li>
+        <li><a href="#contact" data-type="menu-close">CONTACT</a></li>
+      </ul>
+      <div class="social d-flex justify-content-center">
+        <a href="https://github.com/xuanlin129" target="_blank"><iconify-icon icon="mdi-github"></iconify-icon></a>
+        <a href="mailto:xuan.lin129@gmail.com" target="_blank"><iconify-icon icon="mdi-email"></iconify-icon></a>
+      </div>
+    </div>
+    <div class="bg"></div>
+    <div class="shadow" data-type="menu-close"></div>
+    <div class="backdrop" data-type="menu-close"></div>
+    <a href="javascript:void(0)" class="menu-toggle" data-type="menu-close"><iconify-icon
+        icon="mdi-close"></iconify-icon></a>
+  </nav>
+
+  <!-- first-view -->
+  <section id="FV">
+    <div class="container h-100 text-center text-sm-start">
+      <div class="row h-100 d-flex align-items-center">
+        <div class="col-12 col-sm-6">
+          <h1>Xuan Lin</h1>
+          <h6 class="mt-2">Front-end Engineer / Web Designer</h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- 捲動區塊 -->
+    <div class="anim-area">
+      <img class="item d-block" src="./src/images/fv-pic.jpg" alt="">
+      <img class="circle" src="./src/images/fv-circle.png" alt="">
+    </div>
+
+    <!-- 影片背景 -->
+    <video class="fv-bg" src="./src/images/sunlight.mp4" autoplay muted playsinline loop></video>
+  </section>
+
+
+  <!-- about -->
+  <section id="about">
+    <div class="container">
+      <h2><span>About</span></h2>
+      <div class="row justify-content-center">
+        <div class="col-10 col-md-5 position-relative align-self-center">
+          <div class="personal-photo">
+            <img class="rounded-circle" src="./src/images/about.jpg" alt="">
+          </div>
+          <div class="personal-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 256 256">
+              <path fill="#514742"
+                d="M216 96a88 88 0 1 0-144 67.83V240a8 8 0 0 0 11.58 7.16L128 225l44.43 22.21a8.1 8.1 0 0 0 3.57.79a8 8 0 0 0 8-8v-76.17A87.85 87.85 0 0 0 216 96M56 96a72 72 0 1 1 72 72a72.08 72.08 0 0 1-72-72m16 0a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56" />
+            </svg>
+            <img class="rounded-circle" src="./src/images/portrait.png" alt="">
+          </div>
+
+          <div class="text-name">
+            <h3>林子軒</h3>
+            <h3 class="ms-4">Xuan Lin</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mt-4 mx-auto align-self-center">
+          <p class="lh-base">
+            畢業於淡江大學，專精於前端開發，具備 JavaScript、jQuery、Vue.js、node.js、Sass 及 API 串接資料庫的能力，能獨立完成響應式網頁 (RWD)
+            及互動式腳本的開發，並具備前後端整合的實作經驗。
+          </p>
+          <br>
+          <p class="lh-base">
+            在前端開發領域，我擅長建立精美的版型設計、實現動態互動效果，並構建高效的響應式介面，確保跨裝置的流暢體驗。未來，我計劃學習更多框架及後端技術，持續擴展技能，並致力於成為一位全方位的開發工程師，能夠獨立處理各種技術挑戰。
+          </p>
+        </div>
+
+        <div class="resume-area col-12 col-md-5 mt-5 me-md-auto">
+          <h4 class="mb-3">工作經歷</h4>
+          <div class="resume-item">
+            <h6>前端工程師／Asian-Bridge 優橋貿易</h6>
+            <span class="timeline">2024/01-2024/12</span>
+            <p>負責日本電商平台的網頁設計與功能開發，確保系統穩定運作並提升用戶體驗</p>
+            <ul>
+              <li>建立系統化的網頁版型，提升維護與重用效率</li>
+              <li>開發購物車功能，實現順暢的購物流程</li>
+              <li>wordpress平台建立網頁</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <h6>化工工程師／永光化學</h6>
+            <span class="timeline">2021/07-2022/06</span>
+            <p>參與染料製程的關鍵環節，致力於提高產品品質與生產效率</p>
+            <ul>
+              <li>染料製程的過濾與精製工序</li>
+              <li>操作與維護薄膜過濾系統</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-area col-12 col-md-5 mt-5 me-md-auto">
+          <h4 class="mb-3">學歷</h4>
+          <div class="resume-item">
+            <h6>前端網頁開發技術(青年專班)／泰山職業訓練中心</h6>
+            <span class="timeline">2023/03-2023/08</span>
+            <p>經過為期半年的專業訓練，以第三名的成績畢業</p>
+          </div>
+          <div class="resume-item">
+            <h6>化學工程與材料工程碩士／淡江大學</h6>
+            <span class="timeline">2020/09-2022/07</span>
+            <ul>
+              <li>薄膜分離程序</li>
+              <li>薄膜過濾</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <h6>化學工程與材料工程學士／淡江大學</h6>
+            <span class="timeline">2016/09-2020/06</span>
+            <ul>
+              <li>moldex3D 模流分析</li>
+              <li>高分子材料應用及實務</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- portfolio -->
+  <section id="portfolio">
+    <div class="container-md">
+      <h2><span>Portfolio</span></h2>
+      <h3 id="website" class="category">Website</h3>
+      <div class="row">
+        <div class="col-12 col-md-10 position-relative ms-auto">
+          <div class="swiper swiper-project">
+            <div class="swiper-wrapper"><!-- js渲染 --></div>
+          </div>
+          <div class="d-none d-md-block swiper-title">
+            <h4>煮飯研究所｜ゴハンゲンキュウシツ</h4>
+          </div>
+          <div class="swiper-logo">
+            <img src="./src/images/logo-gohan.png" alt="">
+          </div>
+        </div>
+
+        <div class="col-12 my-4 d-md-none">
+          <h4 style="letter-spacing: 0.5em;">煮飯研究所<br><small>ゴハンゲンキュウシツ</small></h4>
+        </div>
+
+        <div class="col-12">
+          <div class="project-intro row justify-content-center">
+            <div class="col-12 col-lg-6 mt-4 mt-lg-0 order-1 order-lg-0">
+              <h5>品牌概念</h5>
+              <p class="lh-base">煮飯研究所是一個與料理緊密連結的空間，結合多樣化與食物接觸的形式，以服務內容、餐點介紹及線上購物三個方向進行網頁設計。</p>
+              <h5>功能說明</h5>
+              <ul class="lh-base">
+                <li>會員登入/註冊</li>
+                <li>購物車</li>
+                <li>查看/編輯會員資料</li>
+                <li>查詢訂單</li>
+                <li>會員管理（後台）</li>
+                <li>商品管理（後台）</li>
+                <li>訂單明細管理（後台）</li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-6 order-lg-1">
+              <div class="project-list">
+                <dl>
+                  <dt>專題名稱</dt>
+                  <dd>煮飯研究所｜ゴハンゲンキュウシツ</dd>
+                </dl>
+                <dl>
+                  <dt>網站類型</dt>
+                  <dd>餐廳形象網站</dd>
+                </dl>
+                <dl>
+                  <dt>網址</dt>
+                  <dd><a class="w-100 d-block" href="https://xuanlin129.github.io/gohancooking/"
+                      target="_blank">https://xuanlin129.github.io/gohancooking/</a></dd>
+                </dl>
+                <dl>
+                  <dt>使用技術</dt>
+                  <dd>Vue、Vuetify、node.js、mongoDB</dd>
+                  <dd class="hint">*因網頁部署之Serverless會進入休眠模式，會員系統和商品瀏覽如果無反應，請稍等1-3分鐘後再使用。
+                  </dd>
+                </dl>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <h3 id="linebot" class="category">Linebot</h3>
+      <div class="linebot row position-relative justify-content-between align-items-center py-2 py-md-5">
+        <div class="col-12 col-md-6">
+          <img src="./src/images/linebot.jpg" alt="">
+        </div>
+        <div class="col-12 col-md-5 mt-3 mt-md-0">
+          <h5 class="mb-3">中油直營資訊機器人</h5>
+          <p class="lh-base">提供快速查詢距離最近的五家中油直營站及目前油價，點擊圖文選單即可使用</p>
+          <p class="hint">
+            *因機器人部署之Serverless會進入休眠模式，若機器人無回應，請稍等15秒-1分鐘後再使用。
+          </p>
+          <div class="d-flex justify-content-end mt-3">
+            <a class="link" href="https://lin.ee/qewCXQz" target="_blank">
+              <img src="./src/images/linebot-qrcode.png" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="bg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 28 28">
+            <path fill="currentColor"
+              d="M14 1.5a.75.75 0 0 1 .75.75V3h4.5A2.75 2.75 0 0 1 22 5.75v5.5A2.75 2.75 0 0 1 19.25 14H8.75A2.75 2.75 0 0 1 6 11.25v-5.5A2.75 2.75 0 0 1 8.75 3h4.5v-.75A.75.75 0 0 1 14 1.5M6.75 16A2.75 2.75 0 0 0 4 18.75v.75c0 1.977.961 3.642 2.717 4.78C8.444 25.397 10.917 26 14 26s5.556-.602 7.283-1.72C23.039 23.141 24 21.476 24 19.5v-.75A2.75 2.75 0 0 0 21.25 16zM11 10a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m7.5-1.5a1.5 1.5 0 1 0-3 0a1.5 1.5 0 0 0 3 0" />
+          </svg>
+        </div>
+      </div>
+
+      <h3 class="category">Other</h3>
+      <div class="other row"><!-- js渲染 --></div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="px-3">
+    <div class="container p-2 pb-4">
+      <h2><span>Contact</span></h2>
+      <form method="post" id="contact-form" class="row justify-content-center needs-validation" novalidate>
+        <div class="form-group col-12 col-md-8 mb-3">
+          <label for="contact-name">姓名*</label>
+          <input class="form-control" type="text" name="contact-name" id="contact-name" required>
+        </div>
+        <div class="form-group col-12 col-md-8 mb-3">
+          <label for="contact-mail">電子郵件*</label>
+          <input class="form-control" type="email" name="contact-mail" id="contact-mail" inputmode="email" required>
+        </div>
+        <div class="form-group col-12 col-md-8 mb-3">
+          <label for="contact-title">主旨*</label>
+          <input class="form-control" type="text" name="contact-title" id="contact-title" required>
+        </div>
+        <div class="form-group col-12 col-md-8 mb-3">
+          <label for="contact-message">內容*</label>
+          <textarea class="form-control" name="contact-message" id="contact-message" rows="5" required></textarea>
+        </div>
+        <div class="col-12 text-center">
+          <input id="contact-submit" class="btn" type="submit" value="送出">
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <div id="footer" class="position-relative py-4">
+        <div class="row justify-content-between align-items-end">
+          <div class="col-md"></div>
+          <div class="col-12 col-md mb-3 mb-md-0 text-center mx-auto">
+            <img class="logo" src="./src/images/logo-name.png" alt="">
+          </div>
+          <div class="col-12 col-md">
+            <div class="social d-flex justify-content-center justify-content-md-end">
+              <a href="https://github.com/xuanlin129" target="_blank"><iconify-icon
+                  icon="mdi-github"></iconify-icon></a>
+              <a href="mailto:xuan.lin129@gmail.com" target="_blank"><iconify-icon icon="mdi-email"></iconify-icon></a>
+            </div>
+          </div>
+        </div>
+        <div class="bg"></div>
+      </div>
+      <div id="copyright" class="position-relative text-center py-2">©Xuan Lin 2025. All Rights Reserved
+        <div class="bg"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loading -->
+  <div id="loading" class="fixed-top d-flex justify-content-center align-items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24">
+      <circle cx="12" cy="2" r="0" fill="currentColor">
+        <animate attributeName="r" begin="0" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+      <circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(45 12 12)">
+        <animate attributeName="r" begin="0.125s" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+      <circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(90 12 12)">
+        <animate attributeName="r" begin="0.25s" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+      <circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(135 12 12)">
+        <animate attributeName="r" begin="0.375s" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+      <circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(180 12 12)">
+        <animate attributeName="r" begin="0.5s" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+      <circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(225 12 12)">
+        <animate attributeName="r" begin="0.625s" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+      <circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(270 12 12)">
+        <animate attributeName="r" begin="0.75s" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+      <circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(315 12 12)">
+        <animate attributeName="r" begin="0.875s" calcMode="spline" dur="1s"
+          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0" />
+      </circle>
+    </svg>
+  </div>
+
+  <!-- contact message -->
+  <div id="contact-msg">
+    <iconify-icon icon="icon-park-solid:success" width="3rem" height="3rem"></iconify-icon>
+    <h5 class="lh-lg">表單已成功送出</h5>
+    <p class="lh-base">再麻煩確認信箱是否有收到通知，謝謝！</p>
+  </div>
+
+  <!-- CDN -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js'></script>
+  <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+  <!-- JS -->
+  <script src="./js/jquery.easeScroll.js"></script>
+  <script src="./js/mobile-vh.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/gsap.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init("bn4H2zRWIomxCrGyF");
+    })();
+  </script>
+</body>
+
+</html>
