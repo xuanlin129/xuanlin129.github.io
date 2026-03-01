@@ -1,0 +1,243 @@
+{
+  "common": {
+    "more": "More"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist.",
+    "backHome": "Back to Home"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "portfolio": "Portfolio",
+    "contact": "Contact me"
+  },
+  "projects": {
+    "gohan-cooking": {
+      "name": "Gohan Cooking"
+    },
+    "xuan-lin": {
+      "name": "Xuan Lin - Personal Website"
+    },
+    "shinhuade": {
+      "name": "Shin Hua De Enterprise Co., Ltd."
+    },
+    "duo": {
+      "name": "Duo - Brand Ambassador"
+    },
+    "flip-clock": {
+      "name": "Flip Clock"
+    }
+  },
+  "home": {
+    "hero": {
+      "subtitle": "Front-end Developer / Web Designer"
+    },
+    "intro": {
+      "title": "Introduction",
+      "subtitle": "Hi! I'm Xuan",
+      "desc1": "Specializing in React interactive development, I am dedicated to transforming design and logic into intuitive, seamless products.",
+      "desc2": "From the finest UI details and the rhythm of interactions to the overall architecture, I strive for more than just 'functionality'—I aim for 'comfort.' To me, frontend development is more than writing code; it’s about bridging the gap between people and technology, making every digital experience feel closer and more human."
+    },
+    "portfolio": {
+      "title": "Portfolio"
+    },
+    "contact": {
+      "title": "Get in touch",
+      "subtitle": "Let’s work together to transform your ideas into digital experiences with a human touch.",
+      "btnText1": "Get in Touch",
+      "btnText2": "Start a Project"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "From web to app, breathing life into every interface.",
+    "intro": {
+      "title": "Hi! I'm Xuan Lin.",
+      "desc1": "For me, front-end development is where technology meets humanity.",
+      "desc2": "Code isn't just cold instructions; it's the bridge connecting users. Rather than blindly chasing new technologies, I focus on creating 'intuition'—making technology invisible and experiences memorable.",
+      "desc3": "I approach projects holistically, focusing on every transformation from backend logic to frontend details. Regardless of the device, my goal remains constant: to build smooth, refined, and warm digital products that bridge the gap between users and the digital world."
+    },
+    "skills": {
+      "title": "Skills",
+      "core": "Core Development",
+      "ui": "Interface & Layout",
+      "motion": "Dynamic Interaction"
+    },
+    "education": {
+      "title": "Education",
+      "history": [
+        {
+          "time": "2023.03-2023.08",
+          "school": "Taishan Vocational Training Center",
+          "degree": "Front-end Web Development Trainee"
+        },
+        {
+          "time": "2020.07-2022.07",
+          "school": "Tamkang University",
+          "degree": "Master of Chemical and Materials Engineering"
+        },
+        {
+          "time": "2016.09-2020.06",
+          "school": "Tamkang University",
+          "degree": "Bachelor of Chemical and Materials Engineering"
+        }
+      ]
+    },
+    "experience": {
+      "jobs": [
+        {
+          "time": "2021.07 - 2022.06",
+          "company": "Everlight Chemical",
+          "job": "Chemical Engineer",
+          "desc": "Focused on precision chemical processes and high-quality dye purification, cultivating rigor for details and system stability.",
+          "list": [
+            {
+              "title": "Precision Process & Quality Management",
+              "content": "Led high-quality dye purification procedures, established high-standard SOPs, ensuring product and system stability."
+            },
+            {
+              "title": "Membrane Filtration System",
+              "content": "Precisely controlled process parameters, ensuring product purity met standards through data monitoring, significantly improving filtration efficiency."
+            },
+            {
+              "title": "Data-Driven Decision Making",
+              "content": "Analyzed process data for anomaly diagnosis, establishing systematic logic to prevent potential deviations and ensure continuous production line operation."
+            }
+          ]
+        },
+        {
+          "time": "2024.01 - 2024.12",
+          "company": "Asian Bridge",
+          "job": "Front-end Intern",
+          "desc": "Responsible for developing a Japanese e-commerce platform, optimizing system stability and enhancing the cross-border shopping experience.",
+          "list": [
+            {
+              "title": "Systematic Interface Construction",
+              "content": "Built a modular component library and standardized development guidelines, increasing code reusability by 40% and ensuring high visual consistency across functional modules."
+            },
+            {
+              "title": "Cross-Device UI/UX Optimization",
+              "content": "Implemented responsive web design, resolving cross-device visual discrepancies and enhancing interface usability and aesthetics."
+            },
+            {
+              "title": "Shopping Flow & State Management",
+              "content": "Developed a high-performance shopping cart system and complex state management logic, reducing checkout drop-off rates and effectively increasing platform conversion rates by improved interaction feedback and error handling."
+            }
+          ]
+        },
+        {
+          "time": "2025.07 - Now",
+          "company": "Revtel Tech",
+          "job": "Front-end Developer",
+          "desc": "Responsible for developing and maintaining Web platforms and cross-platform Apps (iOS/Android), ensuring consistency in multi-terminal user experiences.",
+          "list": [
+            {
+              "title": "Cross-Platform Dev & Architecture Optimization",
+              "content": "Utilized React technology to abstract business logic between Web and App, saving development time."
+            },
+            {
+              "title": "API Integration & Data Processing",
+              "content": "Integrated asynchronous APIs and data import, ensuring seamless connection between frontend and backend logic."
+            },
+            {
+              "title": "High Componentization",
+              "content": "Developed company internal component library based on Ant Design, improving team UI development efficiency and maintaining visual unity."
+            }
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "portfolio": {
+        "title": "View Portfolio",
+        "desc": "Explore my project details"
+      },
+      "contact": {
+        "title": "Contact Me",
+        "desc": "Look forward to collaboration"
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "My creative collection, documenting my growth in design and development."
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "Let’s work together to transform your ideas into digital experiences with a human touch.",
+    "form": {
+      "required": "Required",
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "required": "Please enter your name",
+        "whitespace": "Name cannot be just whitespace"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "example@mail.com",
+        "required": "Please enter your email",
+        "invalid": "Invalid email format"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "e.g., +1 234-567-890",
+        "invalid": "Invalid format"
+      },
+      "type": {
+        "label": "Inquiry Type",
+        "placeholder": "Select a type",
+        "required": "Please select an inquiry type",
+        "options": {
+          "project": "Project Development",
+          "tech": "Technical Exchange/Sharing",
+          "job": "Full-time/Part-time Job Opportunity",
+          "other": "Other"
+        }
+      },
+      "content": {
+        "label": "Message",
+        "placeholder": "Describe your question or requirements...",
+        "required": "Please enter your message"
+      },
+      "agreement": {
+        "agree": "I have read and agree to the",
+        "privacy": "Privacy Policy",
+        "required": "Please read and agree to the Privacy Policy"
+      },
+      "success": "We have received your message and will contact you shortly!",
+      "error": "Failed to send message. Please try again later or contact us directly.",
+      "submit": "Submit"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "Thank you for visiting my personal website. This policy explains how we handle personal data collected via the contact form.",
+    "collection": {
+      "title": "1. Data We Collect",
+      "prefix": "When you fill out and submit the contact form on this site, we collect your ",
+      "middle": " and any ",
+      "suffix": "."
+    },
+    "fields": {
+      "name_email": "name and email address",
+      "message": "message content"
+    },
+    "usage": {
+      "title": "2. Purpose of Use",
+      "content": "The collected information is used solely to respond to your inquiry or interview requests. I will not use your data for marketing or sell it to third parties."
+    },
+    "thirdparty": {
+      "title": "3. Third-party Services",
+      "prefix": "This site uses ",
+      "service": "EmailJS",
+      "suffix": " to send emails. Your data is transmitted securely via encryption."
+    },
+    "rights": {
+      "title": "4. Your Rights",
+      "content": "You may contact me at any time to request access, correction, or deletion of your communication records."
+    }
+  }
+}
