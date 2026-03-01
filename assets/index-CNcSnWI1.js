@@ -1,0 +1,1 @@
+import{bD as e,bE as s}from"./index-CjfB3xB6.js";const i=s.getOutlet("loading");function r(t){return new Promise(a=>setTimeout(a,t))}function n(t,a){const{message:o}={};setTimeout(()=>{i.update({loading:t,message:o})},0)}async function c(t){if(e.state.location.pathname===t){console.log("path not changed");return}n(!0),await r(500),e.navigate(t),n(!1)}export{r as d,c as n,n as s};
