@@ -31,7 +31,7 @@ function Footer() {
               <a href="https://github.com/xuanlin129" target="_blank" rel="noopener noreferrer">
                 <Github size={24} />
               </a>
-              <a href="mailto:xuanlin129@gmail.com">
+              <a href="mailto:xuan.lin129@gmail.com">
                 <Envelope size={24} />
               </a>
             </SocialLinks>
