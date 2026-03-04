@@ -9,13 +9,22 @@ import GlobalSvgDefs from './components/GlobalSvgDefs';
 import GlobalSpinner from './components/GlobalSpinner';
 import { getOutlet } from 'reconnect.js';
 
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    getOutlet('loading').update({ loading: false });
-  }, 500);
-});
-
 function App() {
+  React.useEffect(() => {
+    const handleLoad = () => {
+      setTimeout(() => {
+        getOutlet('loading').update({ loading: false });
+      }, 500);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
+  }, []);
+
   return (
     <ConfigProvider
       theme={{
