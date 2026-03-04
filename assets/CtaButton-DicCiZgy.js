@@ -1,4 +1,4 @@
-import{H as e,I as r,J as a,G as c}from"./index-CrsCfo7c.js";import{n as l}from"./index-C32qEPW5.js";import{A as t}from"./ArrowRight.esm-BfaAcl2x.js";function v(s){const{t:o}=e(),{btnText:n=o("common.more"),target:i}=s;return r.jsxs(d,{onClick:()=>{l(i)},children:[r.jsx(f,{type:"link",children:n}),r.jsxs("div",{className:"arrow",children:[r.jsx(t,{color:"#fff",size:18}),r.jsx(t,{color:"#fff",size:18})]})]})}const d=a.div`
+import{H as e,I as r,J as a,G as c}from"./index-Dk0-bQPC.js";import{n as l}from"./index-BVHMAPAv.js";import{A as t}from"./ArrowRight.esm-CkIOTZYg.js";function v(s){const{t:o}=e(),{btnText:n=o("common.more"),target:i}=s;return r.jsxs(d,{onClick:()=>{l(i)},children:[r.jsx(f,{type:"link",children:n}),r.jsxs("div",{className:"arrow",children:[r.jsx(t,{color:"#fff",size:18}),r.jsx(t,{color:"#fff",size:18})]})]})}const d=a.div`
   display: inline-flex;
   align-items: center;
   cursor: pointer;
