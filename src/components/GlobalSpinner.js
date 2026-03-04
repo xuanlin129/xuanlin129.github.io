@@ -6,7 +6,7 @@ export default function GlobalSpinner() {
   const [mounted, setMounted] = React.useState(false);
   const [info = {}] = useOutlet('loading');
   const { loading, message } = info;
-  const [visible, setVisible] = React.useState(loading);
+  const [visible, setVisible] = React.useState(true);
 
   React.useEffect(() => {
     setMounted(true);
