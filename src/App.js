@@ -8,8 +8,11 @@ import GlobalStyle from './styles/global';
 import GlobalSvgDefs from './components/GlobalSvgDefs';
 import GlobalSpinner from './components/GlobalSpinner';
 import { getOutlet } from 'reconnect.js';
+import { useTranslation } from 'react-i18next';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function App() {
+  const { i18n } = useTranslation();
   React.useEffect(() => {
     const handleLoad = () => {
       setTimeout(() => {
@@ -24,6 +27,16 @@ function App() {
       return () => window.removeEventListener('load', handleLoad);
     }
   }, []);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [i18n.language]);
 
   return (
     <ConfigProvider
