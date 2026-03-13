@@ -48,10 +48,6 @@ function About() {
   const experiences = t('about.experience.jobs', { returnObjects: true });
 
   React.useLayoutEffect(() => {
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
-
     const ctx = gsap.context(() => {
       gsap.to(experienceInnerRef.current, {
         x: () => -(experienceInnerRef.current.scrollWidth - window.innerWidth),
@@ -70,7 +66,6 @@ function About() {
     }, experienceRef);
 
     return () => {
-      clearTimeout(timer);
       ctx.revert();
     };
   }, []);
@@ -481,6 +476,7 @@ const Experience = styled.section`
             display: flex;
             margin-bottom: 5px;
             gap: 8px;
+            font-size: 0.8rem;
 
             & > div {
               padding-top: 2px;
