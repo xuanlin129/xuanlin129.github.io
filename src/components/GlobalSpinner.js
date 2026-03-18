@@ -3,14 +3,9 @@ import styled, { keyframes } from 'styled-components';
 import { useOutlet } from 'reconnect.js';
 
 export default function GlobalSpinner() {
-  const [mounted, setMounted] = React.useState(false);
   const [info = {}] = useOutlet('loading');
   const { loading, message } = info;
   const [visible, setVisible] = React.useState(true);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
 
   React.useEffect(() => {
     if (loading) {
@@ -53,9 +48,7 @@ export default function GlobalSpinner() {
     };
   }, [visible]);
 
-  // 防止未掛載時的閃爍
-  if (!mounted) return null;
-
+  // Client-side only app – spinner can render immediately without a mounted guard.
   return (
     <Wrapper $visible={visible}>
       <Loading>
