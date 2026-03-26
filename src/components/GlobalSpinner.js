@@ -57,7 +57,7 @@ export default function GlobalSpinner() {
   if (!mounted) return null;
 
   return (
-    <Wrapper $visible={visible}>
+    <Wrapper $visible={visible ?? true}>
       <Loading>
         <div className="message">
           {(message || 'Loading').split('').map((char, index) => (
