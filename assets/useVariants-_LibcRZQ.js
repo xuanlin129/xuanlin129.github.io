@@ -1,1 +1,0 @@
-import{r as e,C as l,aE as C,bp as u}from"./index-CHySTb0P.js";const p=(a,n,o)=>{const{variant:s,[a]:r}=e.useContext(l),i=e.useContext(C),c=r?.variant;let t;typeof n<"u"?t=n:o===!1?t="borderless":t=i??c??s??"outlined";const f=u.includes(t);return[t,f]};export{p as u};
