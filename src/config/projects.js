@@ -1,5 +1,12 @@
 export default [
   {
+    id: 'dutchie',
+    name: 'projects.dutchie.name',
+    path: 'https://liff.line.me/2009925378-ccvIMkCQ/',
+    image: new URL('@/assets/dutchie.jpg', import.meta.url).href,
+    highlight: true,
+  },
+  {
     id: 'gohan-cooking',
     name: 'projects.gohan-cooking.name',
     path: 'https://xuanlin129.github.io/gohancooking/',
