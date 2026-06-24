@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import * as Ant from 'antd';
 import CtaButton from '../../components/CtaButton';
 import projects from '../../config/projects';
+import Marquee from 'react-fast-marquee';
 
 const { useBreakpoint } = Ant.Grid;
 
@@ -36,10 +37,35 @@ export default function Portfolio() {
     <Wrapper ref={portfolioRef}>
       <div className="container">
         <h2 className="title">{t('home.portfolio.title')}</h2>
-
         {screens.md && <CtaButton target="/portfolio" />}
       </div>
-      <StyledCarousel
+
+      <StyledMarquee speed={100}>
+        {projects
+          .filter((it) => it.highlight)
+          ?.map((work) => {
+            return (
+              <div key={work.name} className="marquee-item-wrapper">
+                <StyledCard
+                  onClick={() => {
+                    window.open(work.path);
+                  }}
+                  hoverable
+                  cover={
+                    <div className="image-cover">
+                      <img draggable={false} alt={work.name} src={work.image} />
+                      <div className="mask">View Project</div>
+                    </div>
+                  }
+                >
+                  <Ant.Card.Meta title={t(work.name)} />
+                </StyledCard>
+              </div>
+            );
+          })}
+      </StyledMarquee>
+
+      {/* <StyledCarousel
         $autoplaySpeed={autoplaySpeed}
         infinite={true}
         slidesToShow={1}
@@ -73,10 +99,10 @@ export default function Portfolio() {
               </div>
             );
           })}
-      </StyledCarousel>
+      </StyledCarousel> */}
 
       {!screens.md && (
-        <div style={{ textAlign: 'center', marginTop: 100 }}>
+        <div style={{ textAlign: 'center' }}>
           <CtaButton target="/portfolio" />
         </div>
       )}
@@ -212,6 +238,17 @@ const activeLine = keyframes`
   }
   100% {
     width: 100%;
+  }
+`;
+
+const StyledMarquee = styled(Marquee)`
+  margin: 50px 0;
+
+  .marquee-item-wrapper {
+    max-width: min(80vw, 600px);
+    padding: 5px;
+    transform: scale(0.9);
+    transition: transform 0.3s;
   }
 `;
 
