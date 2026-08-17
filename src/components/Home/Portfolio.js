@@ -8,8 +8,6 @@ import Marquee from 'react-fast-marquee';
 
 const { useBreakpoint } = Ant.Grid;
 
-const autoplaySpeed = 3000;
-
 export default function Portfolio() {
   const { t } = useTranslation();
   const screens = useBreakpoint();
@@ -40,7 +38,7 @@ export default function Portfolio() {
         {screens.md && <CtaButton target="/portfolio" />}
       </div>
 
-      <StyledMarquee speed={100}>
+      <StyledMarquee speed={100} autoFill play={autoPlay}>
         {projects
           .filter((it) => it.highlight)
           ?.map((work) => {
@@ -195,10 +193,10 @@ const StyledCard = styled(Ant.Card)`
     }
 
     & > img {
+      display: block;
       border-radius: 0;
       box-shadow: 0px 0px 5px #ccc;
       width: 100%;
-      height: auto;
       aspect-ratio: 16/9;
       object-fit: cover;
       object-position: top;
@@ -245,10 +243,13 @@ const StyledMarquee = styled(Marquee)`
   margin: 50px 0;
 
   .marquee-item-wrapper {
-    max-width: min(80vw, 600px);
+    width: min(80vw, 600px);
+    flex: 0 0 auto;
     padding: 5px;
     transform: scale(0.9);
+    transform-origin: center;
     transition: transform 0.3s;
+    will-change: transform;
   }
 `;
 
