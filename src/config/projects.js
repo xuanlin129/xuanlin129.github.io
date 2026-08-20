@@ -2,7 +2,7 @@ export default [
   {
     id: 'dutchie',
     name: 'projects.dutchie.name',
-    path: 'https://liff.line.me/2009925378-ccvIMkCQ/',
+    path: 'https://lin.ee/7R6k7nq',
     image: new URL('@/assets/dutchie.jpg', import.meta.url).href,
     highlight: true,
   },
