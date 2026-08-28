@@ -38,7 +38,7 @@ export default function Portfolio() {
         {screens.md && <CtaButton target="/portfolio" />}
       </div>
 
-      <StyledMarquee speed={100} autoFill play={autoPlay}>
+      <StyledMarquee speed={100} autoFill>
         {projects
           .filter((it) => it.highlight)
           ?.map((work) => {
