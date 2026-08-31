@@ -18,7 +18,7 @@ export default [
     name: 'projects.xuan-lin.name',
     path: 'https://xuanlin129.github.io/',
     image: new URL('@/assets/xuan-web.png', import.meta.url).href,
-    highlight: true,
+    highlight: false,
   },
   {
     id: 'shinhuade',
@@ -27,13 +27,13 @@ export default [
     image: new URL('@/assets/shinhuade.png', import.meta.url).href,
     highlight: true,
   },
-  {
-    id: 'duo',
-    name: 'projects.duo.name',
-    path: 'https://jpselection.tw/annieChen_exclusive',
-    image: new URL('@/assets/duo.png', import.meta.url).href,
-    highlight: false,
-  },
+  // {
+  //   id: 'duo',
+  //   name: 'projects.duo.name',
+  //   path: 'https://jpselection.tw/annieChen_exclusive',
+  //   image: new URL('@/assets/duo.png', import.meta.url).href,
+  //   highlight: false,
+  // },
   {
     id: 'flip-clock',
     name: 'projects.flip-clock.name',
