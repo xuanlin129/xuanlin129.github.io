@@ -9,10 +9,9 @@ function About() {
 
   return (
     <React.Fragment>
-      <WaveDivider
-        $clip="#clip_bg_01_u_invert"
-        style={{ transform: 'translateY(2%)', marginTop: '-8%', boxShadow: '0 -3px 2px #ccc' }}
-      />
+      <WaveShadow>
+        <WaveDivider $clip="#clip_bg_01_u_invert" />
+      </WaveShadow>
       <Wrapper>
         <div className="container">
           <h2 className="title">{t('home.intro.title')}</h2>
@@ -26,7 +25,9 @@ function About() {
         </div>
       </Wrapper>
       <div style={{ background: 'var(--light-gray-color)' }}>
-        <WaveDivider $clip="#clip_bg_02_d_invert" />
+        <BottomWaveShadow>
+          <WaveDivider $clip="#clip_bg_02_d_invert" />
+        </BottomWaveShadow>
       </div>
     </React.Fragment>
   );
@@ -119,6 +120,16 @@ const Wrapper = styled.section`
       }
     }
   }
+`;
+
+const WaveShadow = styled.div`
+  margin-top: -8%;
+  transform: translateY(2%);
+  filter: drop-shadow(0 -3px 10px #eeeeee80);
+`;
+
+const BottomWaveShadow = styled.div`
+  filter: drop-shadow(0 3px 10px #eeeeee80);
 `;
 
 const WaveDivider = styled.div`
