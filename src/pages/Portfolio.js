@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col, Pagination, Skeleton } from 'antd';
+import { Row, Col, Pagination } from 'antd';
 import { useTranslation } from 'react-i18next';
 import projectsData from '../config/projects';
 
@@ -8,30 +8,13 @@ function Portfolio() {
   const { t } = useTranslation();
   const [cursorState, setCursorState] = React.useState({ x: 0, y: 0, isHovering: false });
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [projects, setProjects] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
   const pageSize = 6;
-
-  const fetchData = React.useCallback(async () => {
-    setLoading(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    try {
-      const startIndex = (currentPage - 1) * pageSize;
-      const endIndex = currentPage * pageSize;
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      const resp = projectsData.slice(startIndex, endIndex);
-      setProjects(resp);
-    } catch (error) {
-      console.error('Failed to fetch projects:', error);
-    } finally {
-      setLoading(false);
-    }
-  }, [currentPage, pageSize]);
+  const startIndex = (currentPage - 1) * pageSize;
+  const projects = projectsData.slice(startIndex, startIndex + pageSize);
 
   React.useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
 
   React.useEffect(() => {
     // 簡單判斷：如果是觸控裝置或寬度較小，就不啟用滑鼠跟隨邏輯
@@ -75,22 +58,7 @@ function Portfolio() {
       <section className="page-body">
         <div className="container" style={{ minHeight: '60vh' }}>
           <Row gutter={[48, 48]}>
-            {loading
-              ? Array.from({ length: pageSize }).map((_, idx) => (
-                  <Col span={24} md={12} lg={8} key={idx}>
-                    <Card>
-                      <div className="image-box skeleton">
-                        <Skeleton.Node active style={{ width: '100%', height: '100%' }}>
-                          {' '}
-                        </Skeleton.Node>
-                      </div>
-                      <div className="content">
-                        <Skeleton active paragraph={{ rows: 2 }} />
-                      </div>
-                    </Card>
-                  </Col>
-                ))
-              : projects.map((it, idx) => (
+            {projects.map((it, idx) => (
                   <Col span={24} md={12} lg={8} key={idx}>
                     <Card className="card">
                       <div

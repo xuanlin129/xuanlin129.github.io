@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import * as Ant from 'antd';
 import CtaButton from '../../components/CtaButton';
 import projects from '../../config/projects';
-import Marquee from 'react-fast-marquee';
+import MarqueeModule from 'react-fast-marquee';
+
+const Marquee = MarqueeModule.default ?? MarqueeModule;
 
 const { useBreakpoint } = Ant.Grid;
 
@@ -38,7 +40,7 @@ export default function Portfolio() {
         {screens.md && <CtaButton target="/portfolio" />}
       </div>
 
-      <StyledMarquee speed={100} autoFill>
+      <StyledMarquee speed={100} autoFill play={autoPlay}>
         {projects
           .filter((it) => it.highlight)
           ?.map((work) => {

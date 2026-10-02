@@ -1,30 +1,35 @@
+import dutchieImage from '@/assets/dutchie.jpg';
+import gohanCookingImage from '@/assets/gohan-cooking.jpg';
+import portfolioImage from '@/assets/xuan-web.png';
+import shinhuadeImage from '@/assets/shinhuade.png';
+import flipClockImage from '@/assets/flip-clock.png';
 export default [
   {
     id: 'dutchie',
     name: 'projects.dutchie.name',
     path: 'https://lin.ee/7R6k7nq',
-    image: new URL('@/assets/dutchie.jpg', import.meta.url).href,
+    image: dutchieImage,
     highlight: true,
   },
   {
     id: 'gohan-cooking',
     name: 'projects.gohan-cooking.name',
     path: 'https://xuanlin129.github.io/gohancooking/',
-    image: new URL('@/assets/gohan-cooking.jpg', import.meta.url).href,
+    image: gohanCookingImage,
     highlight: true,
   },
   {
     id: 'xuan-lin',
     name: 'projects.xuan-lin.name',
     path: 'https://xuanlin129.github.io/',
-    image: new URL('@/assets/xuan-web.png', import.meta.url).href,
+    image: portfolioImage,
     highlight: false,
   },
   {
     id: 'shinhuade',
     name: 'projects.shinhuade.name',
     path: 'https://shinhuade.vercel.app/',
-    image: new URL('@/assets/shinhuade.png', import.meta.url).href,
+    image: shinhuadeImage,
     highlight: true,
   },
   // {
@@ -38,7 +43,7 @@ export default [
     id: 'flip-clock',
     name: 'projects.flip-clock.name',
     path: 'https://xuanlin129.github.io/flip-clock/',
-    image: new URL('@/assets/flip-clock.png', import.meta.url).href,
+    image: flipClockImage,
     highlight: false,
   },
 ];

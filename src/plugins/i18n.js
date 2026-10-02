@@ -1,30 +1,20 @@
-import i18n from 'i18next';
+import { createInstance } from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-
 import en from '../locales/en.json';
 import zhTW from '../locales/zh-TW.json';
 
-const resources = {
-  en: {
-    translation: en,
-  },
-  'zh-TW': {
-    translation: zhTW,
-  },
-};
-
-i18n
-  .use(LanguageDetector) // detect user language
-  .use(initReactI18next) // pass i18n instance to react-i18next
-  .init({
-    resources,
+export async function createI18n(language = 'zh-TW') {
+  const i18n = createInstance();
+  await i18n.use(initReactI18next).init({
+    resources: {
+      en: { translation: en },
+      'zh-TW': { translation: zhTW },
+    },
+    lng: language,
+    supportedLngs: ['en', 'zh-TW'],
     fallbackLng: 'zh-TW',
     load: 'currentOnly',
-    debug: import.meta.env.DEV,
-    interpolation: {
-      escapeValue: false, // react already safes from xss
-    },
+    interpolation: { escapeValue: false },
   });
-
-export { i18n };
+  return i18n;
+}

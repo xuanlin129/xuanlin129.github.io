@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
   <meta charset="UTF-8" />
@@ -20,11 +20,12 @@
   <link rel="apple-touch-icon" href="/favicon.png">
   <title>林子軒 - 前端工程師</title>
   <meta name="google-site-verification" content="91zIuOh6_DuMGk0mGIW8ujEWOaQoAvVn-bm-HcO_VUM" />
+  <!--ssr-head-->
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.js"></script>
+  <div id="root"><!--ssr-outlet--></div>
+  <script type="module" src="/src/entry-client.js"></script>
 </body>
 
 </html>

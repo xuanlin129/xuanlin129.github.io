@@ -1,12 +1,14 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import '@/styles/reset.css';
+import { I18nextProvider } from 'react-i18next';
 import './stores';
-import './plugins/i18n';
 import App from './App';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+export function createApp({ i18n, helmetContext, children }) {
+  return (
+    <StrictMode>
+      <I18nextProvider i18n={i18n}>
+        <App helmetContext={helmetContext}>{children}</App>
+      </I18nextProvider>
+    </StrictMode>
+  );
+}

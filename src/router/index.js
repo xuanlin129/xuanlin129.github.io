@@ -1,45 +1,41 @@
-import React from 'react';
-import { createHashRouter } from 'react-router-dom';
+import { matchRoutes } from 'react-router-dom';
 import Helmet from '../components/Helmet';
+import Layout from '../layouts/Layout';
 
-const Layout = React.lazy(() => import('../layouts/Layout'));
-const Home = React.lazy(() => import('../pages/Home'));
-const About = React.lazy(() => import('../pages/About'));
-const Portfolio = React.lazy(() => import('../pages/Portfolio'));
-const Contact = React.lazy(() => import('../pages/Contact'));
-const NotFound = React.lazy(() => import('../pages/NotFound'));
+export const prerenderPaths = ['/', '/about', '/portfolio', '/contact'];
 
-const routes = [
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      { index: true, element: <Home />, title: 'home' },
-      { path: 'about', element: <About />, title: 'about' },
-      { path: 'portfolio', element: <Portfolio />, title: 'portfolio' },
-      { path: 'contact', element: <Contact />, title: 'contact' },
-    ],
-  },
-  { path: '*', element: <NotFound />, title: 'notFound' },
-];
-
-function applyHelmetToRoutes(routes) {
-  return routes.map((route) => {
-    const { children, title, element, ...rest } = route;
-    const newRoute = { ...rest };
-
-    if (element) {
-      newRoute.element = title ? <Helmet title={title}>{element}</Helmet> : element;
-    }
-
-    if (children) {
-      newRoute.children = applyHelmetToRoutes(children);
-    }
-
-    return newRoute;
-  });
+function createPageRoute(path, title, loadPage) {
+  return {
+    ...(path === '/' ? { index: true } : { path }),
+    async lazy() {
+      const { default: Page } = await loadPage();
+      return { element: <Helmet title={title}><Page /></Helmet> };
+    },
+  };
 }
 
-const router = createHashRouter(applyHelmetToRoutes(routes));
+export async function createRoutes(url) {
+  const routes = [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        createPageRoute('/', 'home', () => import('../pages/Home')),
+        createPageRoute('about', 'about', () => import('../pages/About')),
+        createPageRoute('portfolio', 'portfolio', () => import('../pages/Portfolio')),
+        createPageRoute('contact', 'contact', () => import('../pages/Contact')),
+      ],
+    },
+    createPageRoute('*', 'notFound', () => import('../pages/NotFound')),
+  ];
+  const pathname = new URL(url, 'http://localhost').pathname;
+  const matches = matchRoutes(routes, pathname) ?? [];
 
-export default router;
+  // Resolve the initial page before SSR and hydration; other pages stay lazy.
+  await Promise.all(matches.map(async ({ route }) => {
+    if (!route.lazy) return;
+    Object.assign(route, await route.lazy());
+    delete route.lazy;
+  }));
+  return routes;
+}

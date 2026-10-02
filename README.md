@@ -56,7 +56,7 @@ src/
 
 ### 1. 安裝依賴
 
-確保您的環境中已安裝 Node.js (推薦 v18+)。
+確保您的環境中已安裝 Node.js 20.19+ 或 22.12+（Vite 7 的版本需求）。
 
 ```bash
 npm install
@@ -68,7 +68,7 @@ npm install
 npm run dev
 ```
 
-應用程序將在 [http://localhost:5173](http://localhost:5173) 上運行。
+應用程序將在 [http://localhost:3000](http://localhost:3000) 上運行。
 
 ### 3. 構建生產版本
 
@@ -76,13 +76,51 @@ npm run dev
 npm run build
 ```
 
-打包後的檔案將位於 `dist` 目錄中。
+此指令分別產生 `dist/client`（瀏覽器資源）與 `dist/server`（SSR 渲染入口）。
 
 ### 4. 預覽生產構建
 
 ```bash
 npm run preview
 ```
+
+## SSR 與部署
+
+依照 [Vite 官方 SSR 指南](https://vite.dev/guide/ssr) 使用 Vite 原生 SSR API。開發時由 `server.js` 整合 Vite middleware、HTML 轉換與 `ssrLoadModule`；正式環境直接載入建置後的伺服器入口。
+
+- `src/main.js`：建立共用 React 應用。
+- `src/entry-client.js`：載入初始頁面後執行 hydration，再套用瀏覽器語系偏好。
+- `src/entry-server.js`：每次請求建立獨立路由、語系、Helmet context 與樣式快取，輸出 HTML、標題與樣式。
+- `src/router/index.js`：共用一般路徑路由；初始頁面先載入，其餘頁面延遲載入。
+
+SSR 初始語系為 `zh-TW`，確保伺服器與瀏覽器首次渲染一致；hydration 後恢復語系偵測與使用者已儲存的偏好。頁面網址改為 `/about`、`/portfolio`、`/contact`。
+
+### Node.js SSR 部署
+
+```bash
+npm ci
+npm run build
+npm start
+```
+
+伺服器預設使用連接埠 3000；可透過 `PORT`、`HOST` 調整。正式部署需包含 `server.js`、`scripts/html.js`、`dist`、`package.json`、`package-lock.json`，並安裝正式依賴。`npm run preview` 同樣啟動正式 SSR 服務。未知頁面回傳 HTTP 404。
+
+### GitHub Pages 靜態部署
+
+```bash
+npm run build:static
+```
+
+此指令使用相同 SSR 入口預先產生首頁、個人簡介、作品集、聯絡頁與 `404.html`，部署目錄為 `dist/client`。GitHub Pages 工作流程已使用此指令。GitHub Pages 提供建置時產生的 HTML；每次請求執行 SSR 則需部署 Node.js 服務。
+
+### 驗證
+
+```bash
+npm run lint
+npm test
+```
+
+測試涵蓋各頁 SSR 內容與標題、樣式擷取、404、並行請求隔離，以及靜態部署輸出。
 
 ## 📄 授權
 

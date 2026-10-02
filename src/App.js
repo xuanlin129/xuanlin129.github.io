@@ -1,9 +1,7 @@
 import React from 'react';
-import { RouterProvider } from 'react-router-dom';
 import { App as AntdApp, ConfigProvider } from 'antd';
 import { HelmetProvider } from 'react-helmet-async';
 import theme from './config/theme';
-import router from './router';
 import GlobalStyle from './styles/global';
 import GlobalSvgDefs from './components/GlobalSvgDefs';
 import GlobalSpinner from './components/GlobalSpinner';
@@ -11,21 +9,14 @@ import { getOutlet } from 'reconnect.js';
 import { useTranslation } from 'react-i18next';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-function App() {
+function App({ helmetContext, children }) {
   const { i18n } = useTranslation();
   React.useEffect(() => {
-    const handleLoad = () => {
-      setTimeout(() => {
-        getOutlet('loading').update({ loading: false });
-      }, 500);
-    };
+    const timer = setTimeout(() => {
+      getOutlet('loading').update({ loading: false });
+    }, 500);
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   React.useEffect(() => {
@@ -64,11 +55,11 @@ function App() {
       }}
     >
       <AntdApp>
-        <HelmetProvider>
+        <HelmetProvider context={helmetContext}>
           <GlobalStyle />
           <GlobalSvgDefs />
           <GlobalSpinner />
-          <RouterProvider router={router} />
+          {children}
         </HelmetProvider>
       </AntdApp>
     </ConfigProvider>

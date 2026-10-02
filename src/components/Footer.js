@@ -1,3 +1,4 @@
+import logoImage from '@/assets/logo.png';
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col, Space } from 'antd';
@@ -22,7 +23,7 @@ function Footer() {
         <Row justify="space-between" align="middle" gutter={[32, 32]}>
           <Col xs={24} md={12}>
             <Logo
-              src={new URL('@/assets/logo.png', import.meta.url).href}
+              src={logoImage}
               alt="Logo"
               onClick={() => AppActions.navigate('/')}
             />

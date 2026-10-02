@@ -49,7 +49,7 @@ export default function GlobalSpinner() {
   }, [visible]);
 
   return (
-    <Wrapper $visible={visible ?? true}>
+    <Wrapper $visible={visible} aria-hidden={!visible} data-loading={visible}>
       <Loading>
         <div className="message">
           {(message || 'Loading').split('').map((char, index) => (
@@ -126,6 +126,7 @@ const Wrapper = styled.div`
   height: 100dvh;
   background: var(--dark-gray-color);
   z-index: 1001;
+  pointer-events: ${(props) => (props.$visible ? 'auto' : 'none')};
 
   /* 初始狀態 */
   clip-path: circle(100% at 50% 50%);

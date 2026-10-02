@@ -1,3 +1,4 @@
+import logoImage from '@/assets/logo.png';
 import React from 'react';
 import styled from 'styled-components';
 import * as Ant from 'antd';
@@ -70,7 +71,7 @@ function Header() {
   return (
     <React.Fragment>
       <Logo
-        src={new URL('@/assets/logo.png', import.meta.url).href}
+        src={logoImage}
         alt="Logo"
         onClick={() => {
           AppActions.navigate('/');
@@ -225,7 +226,7 @@ const ActionButton = styled(Ant.Button)`
   &&& {
     color: inherit;
     font-family: 'TW_Bd', sans-serif;
-    position; relative;
+    position: relative;
 
     &::before {
       content: '';

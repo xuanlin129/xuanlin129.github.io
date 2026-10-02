@@ -1,3 +1,4 @@
+import graduationImage from '@/assets/graduation.png';
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col, Descriptions, Tag, Button } from 'antd';
@@ -47,7 +48,7 @@ function About() {
   const educations = t('about.education.history', { returnObjects: true });
   const experiences = t('about.experience.jobs', { returnObjects: true });
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(experienceInnerRef.current, {
         x: () => -(experienceInnerRef.current.scrollWidth - window.innerWidth),
@@ -85,7 +86,7 @@ function About() {
             <Col xs={24} sm={8} className="graduation">
               <img
                 style={{ width: '100%' }}
-                src={new URL('@/assets/graduation.png', import.meta.url).href}
+                src={graduationImage}
                 alt="graduation"
               />
               <div className="block"></div>

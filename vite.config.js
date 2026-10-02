@@ -5,7 +5,10 @@ import { fileURLToPath, URL } from 'node:url';
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [react()],
+  plugins: [react({ babel: { plugins: ['babel-plugin-styled-components'] } })],
+  ssr: {
+    noExternal: ['gsap', 'styled-components', 'react-helmet-async'],
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -15,6 +18,9 @@ export default defineConfig({
     loader: 'jsx',
     include: ['src/**/*.js', 'src/**/*.jsx'],
     exclude: [],
+  },
+  optimizeDeps: {
+    esbuildOptions: { loader: { '.js': 'jsx' } },
   },
   server: {
     host: true, // ⭐ 關鍵
