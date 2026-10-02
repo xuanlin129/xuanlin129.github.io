@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as Ant from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from '@styled-icons/fa-solid';
 import * as AppActions from '../utils';
@@ -15,7 +14,7 @@ function CtaButton(props) {
       href={path}
       onClick={(event) => AppActions.handleLinkNavigation(event, path)}
     >
-      <Button as="span" type="link">{btnText}</Button>
+      <Label>{btnText}</Label>
       <div className="arrow">
         <ArrowRight color="#fff" size={18} />
         <ArrowRight color="#fff" size={18} />
@@ -84,18 +83,12 @@ const Container = styled.a`
   }
 `;
 
-const Button = styled(Ant.Button)`
-  && {
-    color: var(--dark);
-    padding-left: 0;
-    font-family: 'EN_Bd';
-    font-size: 1.1rem;
-
-    &:hover {
-      color: var(--dark) !important;
-      background: transparent !important;
-    }
-  }
+const Label = styled.span`
+  color: var(--dark-gray-color);
+  padding-right: 15px;
+  font-family: 'EN_Bd', 'TW_Bd', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
 `;
 
 export default CtaButton;
