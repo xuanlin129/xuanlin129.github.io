@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /404
 
 Sitemap: https://xuanlin129.github.io/sitemap.xml

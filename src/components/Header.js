@@ -1,4 +1,5 @@
 import logoImage from '@/assets/logo.png';
+import { pagePaths } from '../config/site';
 import React from 'react';
 import styled from 'styled-components';
 import * as Ant from 'antd';
@@ -9,10 +10,10 @@ import { EarthAmericas, ChevronDown } from '@styled-icons/fa-solid';
 const { useBreakpoint } = Ant.Grid;
 
 const navItems = [
-  { path: '/', label: 'home' },
-  { path: '/about', label: 'about' },
-  { path: '/portfolio', label: 'portfolio' },
-  { path: '/contact', label: 'contact' },
+  { path: pagePaths.home, label: 'home' },
+  { path: pagePaths.about, label: 'about' },
+  { path: pagePaths.portfolio, label: 'portfolio' },
+  { path: pagePaths.contact, label: 'contact' },
 ];
 
 const langOptions = [
@@ -90,9 +91,8 @@ function Header() {
                       <li key={it.label}>
                         <ActionButton
                           type="link"
-                          onClick={() => {
-                            AppActions.navigate(it.path);
-                          }}
+                          href={it.path}
+                          onClick={(event) => AppActions.handleLinkNavigation(event, it.path)}
                         >
                           {t(`nav.${it.label}`)}
                         </ActionButton>
@@ -131,14 +131,15 @@ function Header() {
         <ul>
           {navItems.map((it) => (
             <li key={it.label}>
-              <span
-                onClick={() => {
-                  AppActions.navigate(it.path);
+              <a
+                href={it.path}
+                onClick={(event) => {
+                  AppActions.handleLinkNavigation(event, it.path);
                   setDrawer(false);
                 }}
               >
                 {t(`nav.${it.label}`)}
-              </span>
+              </a>
             </li>
           ))}
         </ul>
@@ -319,6 +320,11 @@ const Drawer = styled.section`
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  & a {
+    color: inherit;
+    text-decoration: none;
   }
 
   & > ul {

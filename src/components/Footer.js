@@ -1,4 +1,5 @@
 import logoImage from '@/assets/logo.png';
+import { pagePaths } from '../config/site';
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col, Space } from 'antd';
@@ -8,10 +9,10 @@ import { Envelope } from '@styled-icons/fa-solid';
 import * as AppActions from '../utils';
 
 const navLinks = [
-  { key: 'home', path: '/' },
-  { key: 'about', path: '/about' },
-  { key: 'portfolio', path: '/portfolio' },
-  { key: 'contact', path: '/contact' },
+  { key: 'home', path: pagePaths.home },
+  { key: 'about', path: pagePaths.about },
+  { key: 'portfolio', path: pagePaths.portfolio },
+  { key: 'contact', path: pagePaths.contact },
 ];
 
 function Footer() {
@@ -29,10 +30,10 @@ function Footer() {
             />
             <p className="desc">{t('about.intro.desc1')}</p>
             <SocialLinks>
-              <a href="https://github.com/xuanlin129" target="_blank" rel="noopener noreferrer">
+              <a aria-label="GitHub — Xuan Lin" href="https://github.com/xuanlin129" target="_blank" rel="noopener noreferrer">
                 <Github size={24} />
               </a>
-              <a href="mailto:xuan.lin129@gmail.com">
+              <a aria-label="Email — Xuan Lin" href="mailto:xuan.lin129@gmail.com">
                 <Envelope size={24} />
               </a>
             </SocialLinks>
@@ -40,8 +41,10 @@ function Footer() {
           <Col xs={24} md={12}>
             <NavList>
               {navLinks.map((item) => (
-                <li key={item.key} onClick={() => AppActions.navigate(item.path)}>
-                  {t(`nav.${item.key}`)}
+                <li key={item.key}>
+                  <a href={item.path} onClick={(event) => AppActions.handleLinkNavigation(event, item.path)}>
+                    {t(`nav.${item.key}`)}
+                  </a>
                 </li>
               ))}
             </NavList>
@@ -96,7 +99,9 @@ const NavList = styled.ul`
   padding: 0;
   margin: 0;
 
-  li {
+  a {
+    display: inline-block;
+    text-decoration: none;
     cursor: pointer;
     font-size: 0.95rem;
     color: #ccc;

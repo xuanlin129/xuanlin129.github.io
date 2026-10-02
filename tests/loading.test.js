@@ -3,7 +3,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { test } from 'node:test';
 import { getOutlet } from 'reconnect.js';
 import '../src/stores/index.js';
-import { navigate, setRouter } from '../src/utils/index.js';
+import { navigate, setRouter, handleLinkNavigation } from '../src/utils/index.js';
 
 for (const shouldFail of [false, true]) {
   test(`navigation clears loading after ${shouldFail ? 'failure' : 'success'}`, async () => {
@@ -34,3 +34,24 @@ for (const shouldFail of [false, true]) {
     }
   });
 }
+
+test('internal links preserve new-tab modifier clicks and native navigation before initialization', () => {
+  let prevented = false;
+  const event = {
+    button: 0,
+    metaKey: true,
+    currentTarget: { target: '' },
+    preventDefault() { prevented = true; },
+  };
+  setRouter({ state: { location: { pathname: '/' } } });
+  try {
+    handleLinkNavigation(event, '/about/');
+    assert.equal(prevented, false);
+    setRouter(undefined);
+    event.metaKey = false;
+    handleLinkNavigation(event, '/about/');
+    assert.equal(prevented, false);
+  } finally {
+    setRouter(undefined);
+  }
+});

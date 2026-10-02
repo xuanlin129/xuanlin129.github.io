@@ -8,14 +8,14 @@ import * as AppActions from '../utils';
 function CtaButton(props) {
   const { t } = useTranslation();
   const { btnText = t('common.more'), target } = props;
+  const path = target.endsWith('/') ? target : `${target}/`;
 
   return (
     <Container
-      onClick={() => {
-        AppActions.navigate(target);
-      }}
+      href={path}
+      onClick={(event) => AppActions.handleLinkNavigation(event, path)}
     >
-      <Button type="link">{btnText}</Button>
+      <Button as="span" type="link">{btnText}</Button>
       <div className="arrow">
         <ArrowRight color="#fff" size={18} />
         <ArrowRight color="#fff" size={18} />
@@ -24,7 +24,9 @@ function CtaButton(props) {
   );
 }
 
-const Container = styled.div`
+const Container = styled.a`
+  color: inherit;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   cursor: pointer;

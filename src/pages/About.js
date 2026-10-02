@@ -75,7 +75,7 @@ function About() {
     <Wrapper>
       <section className="page-head">
         <div className="container">
-          <h2>{t('about.title')}</h2>
+          <h1>{t('about.title')}</h1>
           <p>{t('about.subtitle')}</p>
         </div>
       </section>
@@ -87,7 +87,7 @@ function About() {
               <img
                 style={{ width: '100%' }}
                 src={graduationImage}
-                alt="graduation"
+                alt={t('seo.aboutPortraitAlt')}
               />
               <div className="block"></div>
             </Col>
@@ -207,11 +207,10 @@ function About() {
       <CTA>
         <Row>
           <Col span={24} sm={12}>
-            <div
+            <a
               className="contact-item work"
-              onClick={() => {
-                AppActions.navigate('/portfolio');
-              }}
+              href="/portfolio/"
+              onClick={(event) => AppActions.handleLinkNavigation(event, '/portfolio/')}
             >
               <div>
                 <h3>{t('about.cta.portfolio.title')}</h3>
@@ -220,14 +219,13 @@ function About() {
               <span className="icon">
                 <ArrowRight size={24} />
               </span>
-            </div>
+            </a>
           </Col>
           <Col span={24} sm={12}>
-            <div
+            <a
               className="contact-item contact"
-              onClick={() => {
-                AppActions.navigate('/contact');
-              }}
+              href="/contact/"
+              onClick={(event) => AppActions.handleLinkNavigation(event, '/contact/')}
             >
               <div>
                 <h3>{t('about.cta.contact.title')}</h3>
@@ -236,7 +234,7 @@ function About() {
               <span className="icon">
                 <ArrowRight size={24} />
               </span>
-            </div>
+            </a>
           </Col>
         </Row>
       </CTA>
@@ -251,7 +249,7 @@ const Wrapper = styled.main`
     padding: 50px 0;
     text-align: center;
 
-    & h2 {
+    & h1 {
       font-size: 2.5rem;
       font-family: 'EN_Bd', 'TW_Bd', sans-serif;
     }

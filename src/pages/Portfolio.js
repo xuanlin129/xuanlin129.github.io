@@ -51,7 +51,7 @@ function Portfolio() {
       </ViewMoreCursor>
       <section className="page-head">
         <div className="container">
-          <h2>{t('portfolio.title')}</h2>
+          <h1>{t('portfolio.title')}</h1>
           <p>{t('portfolio.subtitle')}</p>
         </div>
       </section>
@@ -67,11 +67,11 @@ function Portfolio() {
                           window.open(it.path);
                         }}
                       >
-                        <img src={it.image} alt={t(it.name)} />
+                        <img src={it.image} alt={t(it.name)} loading="lazy" decoding="async" />
                       </div>
                       <div className="content">
                         <h4>{t(it.name)}</h4>
-                        <a href={it.path} target="_blank">
+                        <a href={it.path} target="_blank" rel="noopener noreferrer">
                           {it.path}
                         </a>
                       </div>
@@ -201,7 +201,7 @@ const Wrapper = styled.main`
     padding: 50px 0;
     text-align: center;
 
-    & h2 {
+    & h1 {
       font-size: 2.5rem;
       font-family: 'EN_Bd', 'TW_Bd', sans-serif;
     }

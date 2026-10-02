@@ -29,9 +29,10 @@ export async function render(url) {
       <StyleProvider cache={styleCache}>{app}</StyleProvider>,
     ));
     const isNotFound = context.matches.at(-1)?.route.path === '*';
+    const { helmet } = helmetContext;
     return {
       html,
-      head: helmetContext.helmet.title.toString(),
+      head: [helmet.title, helmet.meta, helmet.link, helmet.script].map((tag) => tag.toString()).join(''),
       styles: extractStyle(styleCache) + styleSheet.getStyleTags(),
       status: isNotFound ? 404 : context.statusCode,
     };

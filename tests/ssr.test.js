@@ -5,10 +5,10 @@ import { render } from '../dist/server/entry-server.js';
 import { renderDocument } from '../scripts/html.js';
 
 const pages = [
-  ['/', 'Xuan Lin', '前端工程師 / 網頁設計師'],
-  ['/about', '個人簡介 - Xuan Lin', '關於我'],
-  ['/portfolio', '作品集 - Xuan Lin', 'Dutchie'],
-  ['/contact', '聯絡我 - Xuan Lin', '聯絡我'],
+  ['/', '林子軒 Xuan Lin｜前端工程師・網頁設計與網頁開發', '前端工程師 / 網頁設計 / 網頁開發'],
+  ['/about', '個人簡介｜林子軒 Xuan Lin・前端工程師', '關於我'],
+  ['/portfolio', '作品集｜林子軒 Xuan Lin', 'Dutchie'],
+  ['/contact', '聯絡我｜林子軒 Xuan Lin・專案合作與面試邀約', '聯絡我'],
 ];
 
 for (const [path, title, content] of pages) {
@@ -50,4 +50,50 @@ test('GitHub Pages output contains each page and uses client assets', async () =
     assert.doesNotMatch(html, /<!--ssr-outlet-->|<!--ssr-head-->/);
     assert.match(html, /src="\/assets\/.*\.js"/);
   }
+});
+
+for (const [path] of pages) {
+  test(`static HTML exposes crawlable SEO metadata and content for ${path}`, async () => {
+    const destination = `${path.slice(1)}${path === '/' ? '' : '/'}index.html`;
+    const html = await readFile(new URL(`../dist/client/${destination}`, import.meta.url), 'utf8');
+    const canonical = `https://xuanlin129.github.io${path}${path === '/' ? '' : '/'}`;
+    assert.equal((html.match(/name="description"/g) ?? []).length, 1);
+    assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1);
+    assert.ok(html.includes(`href="${canonical}"`));
+    assert.match(html, /property="og:image" content="https:\/\/xuanlin129.github.io\/preview.png"/);
+    assert.match(html, /name="twitter:card" content="summary_large_image"/);
+    assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
+    for (const link of ['/about/', '/portfolio/', '/contact/']) {
+      assert.ok(html.includes(`href="${link}"`));
+    }
+    const script = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/);
+    assert.ok(script);
+    const data = JSON.parse(script[1]);
+    const person = data['@graph'].find((item) => item['@type'] === 'Person');
+    assert.equal(person.name, '林子軒');
+    assert.deepEqual(person.sameAs, ['https://github.com/xuanlin129']);
+    if (path === '/about') {
+      const profile = data['@graph'].find((item) => item['@type'] === 'ProfilePage');
+      assert.equal(profile.mainEntity['@id'], person['@id']);
+    }
+    if (path === '/portfolio') {
+      const list = data['@graph'].find((item) => item['@type'] === 'ItemList');
+      assert.equal(list.itemListElement.length, 5);
+      list.itemListElement.forEach((project) => assert.ok(html.includes(project.name)));
+    }
+  });
+}
+
+test('canonical excludes tracking parameters', async () => {
+  const result = await render('/about/?utm_source=test');
+  assert.match(result.head, /rel="canonical" href="https:\/\/xuanlin129.github.io\/about\/"/);
+  assert.doesNotMatch(result.head, /utm_source/);
+});
+
+test('static 404 is noindex and remains crawlable so the directive can be read', async () => {
+  const html = await readFile(new URL('../dist/client/404.html', import.meta.url), 'utf8');
+  const robots = await readFile(new URL('../dist/client/robots.txt', import.meta.url), 'utf8');
+  assert.match(html, /name="robots" content="noindex, follow"/);
+  assert.doesNotMatch(html, /rel="canonical"|application\/ld\+json/);
+  assert.doesNotMatch(robots, /Disallow: \/404/);
 });

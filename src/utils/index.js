@@ -33,4 +33,13 @@ async function navigate(path) {
   }
 }
 
-export { delay, setLoading, navigate, setRouter };
+function handleLinkNavigation(event, path) {
+  if (!router || event.defaultPrevented || event.button !== 0) return;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  if (event.currentTarget.target === '_blank') return;
+
+  event.preventDefault();
+  navigate(path).catch((error) => console.error('Navigation failed:', error));
+}
+
+export { delay, setLoading, navigate, setRouter, handleLinkNavigation };

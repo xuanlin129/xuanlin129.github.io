@@ -122,6 +122,16 @@ npm test
 
 測試涵蓋各頁 SSR 內容與標題、樣式擷取、404、並行請求隔離，以及靜態部署輸出。
 
+## SEO 與 AI 搜尋內容
+
+每個正式頁面都有獨立 title、description、canonical、Open Graph 與 Twitter Card，並在預先渲染的 HTML 中輸出。正式網址統一使用結尾斜線，與 GitHub Pages 及 sitemap 一致。
+
+`src/config/site.js` 集中管理正式網址與人物連結；`src/locales` 管理中英文頁面描述。人物、網站、個人簡介與作品列表使用 JSON-LD，資訊取自頁面中的姓名、專業與作品，修改內容時應同步維護。
+
+404 使用 `noindex, follow`；robots.txt 允許爬蟲讀取此規則。英文目前是瀏覽器端語系切換，共用繁體中文網址，沒有獨立英文索引頁或 hreflang。
+
+發布後可在 Google Search Console 提交 `/sitemap.xml`，並檢查四個正式頁面的索引狀態與搜尋字詞。SEO 與 AI 搜尋效果需以實際搜尋曝光、點擊與索引資料觀察。
+
 ## 📄 授權
 
 此專案僅供個人作品展示使用。

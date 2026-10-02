@@ -35,12 +35,12 @@
   },
   "home": {
     "hero": {
-      "subtitle": "Front-end Developer / Web Designer"
+      "subtitle": "Front-end Developer / Web Design / Web Development"
     },
     "intro": {
       "title": "Introduction",
       "subtitle": "Hi! I'm Xuan",
-      "desc1": "Specializing in React interactive development, I am dedicated to transforming design and logic into intuitive, seamless products.",
+      "desc1": "I’m Xuan Lin, a front-end developer focused on web design and web development. I use React to build intuitive, seamless interactive experiences.",
       "desc2": "From the finest UI details and the rhythm of interactions to the overall architecture, I strive for more than just 'functionality'—I aim for 'comfort.' To me, frontend development is more than writing code; it’s about bridging the gap between people and technology, making every digital experience feel closer and more human."
     },
     "portfolio": {
@@ -242,5 +242,26 @@
       "title": "4. Your Rights",
       "content": "You may contact me at any time to request access, correction, or deletion of your communication records."
     }
+  },
+  "seo": {
+    "jobTitle": "Front-end Developer",
+    "imageAlt": "Xuan Lin’s personal website and front-end portfolio",
+    "home": {
+      "title": "Xuan Lin | Front-end Developer, Web Design & Development",
+      "description": "Explore Xuan Lin’s React development, responsive websites and cross-platform apps. Browse projects, skills and experience, or get in touch about projects and job opportunities."
+    },
+    "about": {
+      "title": "About Xuan Lin | Front-end Developer",
+      "description": "Meet Xuan Lin, a front-end developer with a chemical engineering background. Explore experience with React, React Native, Vue, Ant Design and GSAP, education and Web/App development."
+    },
+    "portfolio": {
+      "title": "Portfolio | Xuan Lin",
+      "description": "Browse Xuan Lin’s portfolio: Dutchie, Gohan Cooking, Shin Hua De Enterprise, a personal website and Flip Clock. Follow project links to explore each work."
+    },
+    "contact": {
+      "title": "Contact Xuan Lin | Projects & Job Opportunities",
+      "description": "Contact front-end developer Xuan Lin about web and app projects, technical discussions, or full-time and part-time job opportunities through the contact form or email."
+    },
+    "aboutPortraitAlt": "Xuan Lin’s university graduation photo"
   }
 }

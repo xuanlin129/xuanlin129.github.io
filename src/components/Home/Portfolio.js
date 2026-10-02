@@ -53,7 +53,7 @@ export default function Portfolio() {
                   hoverable
                   cover={
                     <div className="image-cover">
-                      <img draggable={false} alt={work.name} src={work.image} />
+                      <img draggable={false} alt={t(work.name)} loading="lazy" decoding="async" src={work.image} />
                       <div className="mask">View Project</div>
                     </div>
                   }
@@ -89,7 +89,7 @@ export default function Portfolio() {
                   hoverable
                   cover={
                     <div className="image-cover">
-                      <img draggable={false} alt={work.name} src={work.image} />
+                      <img draggable={false} alt={t(work.name)} loading="lazy" decoding="async" src={work.image} />
                       <div className="mask">View Project</div>
                     </div>
                   }

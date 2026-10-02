@@ -68,7 +68,7 @@ function Contact() {
     <Wrapper>
       <section className="page-head">
         <div className="container">
-          <h2>{t('contact.title')}</h2>
+          <h1>{t('contact.title')}</h1>
           <p>{t('contact.subtitle')}</p>
         </div>
       </section>
@@ -281,7 +281,7 @@ const Wrapper = styled.main`
     padding: 50px 0;
     text-align: center;
 
-    & h2 {
+    & h1 {
       font-size: 2.5rem;
       font-family: 'EN_Bd', 'TW_Bd', sans-serif;
     }
