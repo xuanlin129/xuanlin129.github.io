@@ -9,9 +9,9 @@ export const site = {
 
 export const pagePaths = {
   home: '/',
-  about: '/about/',
-  portfolio: '/portfolio/',
-  contact: '/contact/',
+  about: '/about',
+  portfolio: '/portfolio',
+  contact: '/contact',
 };
 
 export function getPageUrl(page) {

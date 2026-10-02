@@ -8,6 +8,7 @@
     "build": "npm run build:client && npm run build:server",
     "lint": "eslint .",
     "preview": "node server.js --production",
+    "preview:static": "node scripts/preview-static.js",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.js",
     "build:static": "npm run build && node scripts/prerender.js",

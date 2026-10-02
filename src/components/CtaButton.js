@@ -7,7 +7,7 @@ import * as AppActions from '../utils';
 function CtaButton(props) {
   const { t } = useTranslation();
   const { btnText = t('common.more'), target } = props;
-  const path = target.endsWith('/') ? target : `${target}/`;
+  const path = target === '/' ? target : target.replace(/\/+$/, '');
 
   return (
     <Container

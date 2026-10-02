@@ -209,8 +209,8 @@ function About() {
           <Col span={24} sm={12}>
             <a
               className="contact-item work"
-              href="/portfolio/"
-              onClick={(event) => AppActions.handleLinkNavigation(event, '/portfolio/')}
+              href="/portfolio"
+              onClick={(event) => AppActions.handleLinkNavigation(event, '/portfolio')}
             >
               <div>
                 <h3>{t('about.cta.portfolio.title')}</h3>
@@ -224,8 +224,8 @@ function About() {
           <Col span={24} sm={12}>
             <a
               className="contact-item contact"
-              href="/contact/"
-              onClick={(event) => AppActions.handleLinkNavigation(event, '/contact/')}
+              href="/contact"
+              onClick={(event) => AppActions.handleLinkNavigation(event, '/contact')}
             >
               <div>
                 <h3>{t('about.cta.contact.title')}</h3>

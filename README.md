@@ -113,6 +113,8 @@ npm run build:static
 
 此指令使用相同 SSR 入口預先產生首頁、個人簡介、作品集、聯絡頁與 `404.html`，部署目錄為 `dist/client`。GitHub Pages 工作流程已使用此指令。GitHub Pages 提供建置時產生的 HTML；每次請求執行 SSR 則需部署 Node.js 服務。
 
+使用 `npm run preview:static` 在本機驗證靜態輸出（預設連接埠 4173），支援 `/about` 等無副檔名網址，不會執行 SSR。一般 Python 靜態伺服器不支援這種網址解析。
+
 ### 驗證
 
 ```bash
@@ -124,7 +126,7 @@ npm test
 
 ## SEO 與 AI 搜尋內容
 
-每個正式頁面都有獨立 title、description、canonical、Open Graph 與 Twitter Card，並在預先渲染的 HTML 中輸出。正式網址統一使用結尾斜線，與 GitHub Pages 及 sitemap 一致。
+每個正式頁面都有獨立 title、description、canonical、Open Graph 與 Twitter Card，並在預先渲染的 HTML 中輸出。分頁正式網址統一不帶結尾斜線（例如 `/about`），與 canonical 及 sitemap 一致。GitHub Pages 使用 `about.html` 等檔案提供無副檔名網址，不再產生 `about/index.html` 等目錄頁面。
 
 `src/config/site.js` 集中管理正式網址與人物連結；`src/locales` 管理中英文頁面描述。人物、網站、個人簡介與作品列表使用 JSON-LD，資訊取自頁面中的姓名、專業與作品，修改內容時應同步維護。
 

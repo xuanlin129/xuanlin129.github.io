@@ -45,11 +45,11 @@ test('internal links preserve new-tab modifier clicks and native navigation befo
   };
   setRouter({ state: { location: { pathname: '/' } } });
   try {
-    handleLinkNavigation(event, '/about/');
+    handleLinkNavigation(event, '/about');
     assert.equal(prevented, false);
     setRouter(undefined);
     event.metaKey = false;
-    handleLinkNavigation(event, '/about/');
+    handleLinkNavigation(event, '/about');
     assert.equal(prevented, false);
   } finally {
     setRouter(undefined);

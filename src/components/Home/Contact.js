@@ -17,8 +17,8 @@ export default function Contact() {
           <StyledButton
             size="large"
             type="primary"
-            href="/contact/"
-            onClick={(event) => AppActions.handleLinkNavigation(event, '/contact/')}
+            href="/contact"
+            onClick={(event) => AppActions.handleLinkNavigation(event, '/contact')}
           >
             <Envelope size={20} />
             <div className="text-mask">

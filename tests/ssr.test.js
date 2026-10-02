@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import { test } from 'node:test';
 import { render } from '../dist/server/entry-server.js';
 import { renderDocument } from '../scripts/html.js';
@@ -44,7 +44,7 @@ test('HTML insertion preserves literal replacement characters', () => {
 
 test('GitHub Pages output contains each page and uses client assets', async () => {
   for (const [path, title] of [...pages, ['/404', '找不到頁面 - Xuan Lin']]) {
-    const destination = path === '/404' ? '404.html' : `${path.slice(1)}${path === '/' ? '' : '/'}index.html`;
+    const destination = path === '/' ? 'index.html' : `${path.slice(1)}.html`;
     const html = await readFile(new URL(`../dist/client/${destination}`, import.meta.url), 'utf8');
     assert.ok(html.includes(title));
     assert.doesNotMatch(html, /<!--ssr-outlet-->|<!--ssr-head-->/);
@@ -52,18 +52,29 @@ test('GitHub Pages output contains each page and uses client assets', async () =
   }
 });
 
+test('static output uses HTML files without legacy directory pages', async () => {
+  for (const path of ['/about', '/portfolio', '/contact']) {
+    await assert.rejects(
+      stat(new URL(`../dist/client${path}/index.html`, import.meta.url)),
+      { code: 'ENOENT' },
+    );
+  }
+  const sitemap = await readFile(new URL('../dist/client/sitemap.xml', import.meta.url), 'utf8');
+  assert.doesNotMatch(sitemap, /\/(about|portfolio|contact)\/<\/loc>/);
+});
+
 for (const [path] of pages) {
   test(`static HTML exposes crawlable SEO metadata and content for ${path}`, async () => {
-    const destination = `${path.slice(1)}${path === '/' ? '' : '/'}index.html`;
+    const destination = path === '/' ? 'index.html' : `${path.slice(1)}.html`;
     const html = await readFile(new URL(`../dist/client/${destination}`, import.meta.url), 'utf8');
-    const canonical = `https://xuanlin129.github.io${path}${path === '/' ? '' : '/'}`;
+    const canonical = `https://xuanlin129.github.io${path}`;
     assert.equal((html.match(/name="description"/g) ?? []).length, 1);
     assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1);
     assert.ok(html.includes(`href="${canonical}"`));
     assert.match(html, /property="og:image" content="https:\/\/xuanlin129.github.io\/preview.png"/);
     assert.match(html, /name="twitter:card" content="summary_large_image"/);
     assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
-    for (const link of ['/about/', '/portfolio/', '/contact/']) {
+    for (const link of ['/about', '/portfolio', '/contact']) {
       assert.ok(html.includes(`href="${link}"`));
     }
     const script = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/);
@@ -86,7 +97,7 @@ for (const [path] of pages) {
 
 test('canonical excludes tracking parameters', async () => {
   const result = await render('/about/?utm_source=test');
-  assert.match(result.head, /rel="canonical" href="https:\/\/xuanlin129.github.io\/about\/"/);
+  assert.match(result.head, /rel="canonical" href="https:\/\/xuanlin129.github.io\/about"/);
   assert.doesNotMatch(result.head, /utm_source/);
 });
 

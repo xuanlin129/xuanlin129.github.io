@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { render, prerenderPaths } from '../dist/server/entry-server.js';
 import { renderDocument } from './html.js';
 
@@ -9,9 +9,10 @@ await writeFile(new URL('../dist/server/index.html', import.meta.url), template)
 
 for (const path of [...prerenderPaths, '/404']) {
   const result = await render(path);
-  const destination = path === '/404' ? '404.html' : `${path.slice(1)}${path === '/' ? '' : '/'}index.html`;
+  const destination = path === '/' ? 'index.html' : `${path.slice(1)}.html`;
   const file = new URL(destination, output);
-  await mkdir(new URL('.', file), { recursive: true });
-  await writeFile(file, renderDocument(template, result));
+  const html = renderDocument(template, result);
+  await writeFile(file, html);
+
   console.log(`Pre-rendered ${path}`);
 }
