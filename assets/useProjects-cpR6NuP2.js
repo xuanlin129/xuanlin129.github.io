@@ -1,1 +1,0 @@
-import{Y as n,r as t,aw as a}from"./index-552b-Pjx.js";function p(){const{i18n:r}=n(),e=r.resolvedLanguage==="en"?"en":"zh-TW",[s,c]=t.useState(null),o=s?.locale===e?s.projects:a(e);return t.useEffect(()=>{},["",e]),o}export{p as u};
