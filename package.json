@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node server.js",
-    "build": "npm run build:client && npm run build:server",
+    "dev": "node scripts/sync-projects.js --development && node server.js",
+    "build": "node scripts/sync-projects.js && npm run build:client && npm run build:server",
     "lint": "eslint .",
     "preview": "node server.js --production",
     "preview:static": "node scripts/preview-static.js",

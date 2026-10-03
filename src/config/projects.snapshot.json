@@ -1,0 +1,24 @@
+{
+  "zh-TW": [
+    {
+      "id": "6ac0f5ee407aedcb69f0c7e8",
+      "slug": "xuanlin-website",
+      "title": "林子軒 - 個人網站",
+      "path": "https://xuanlin129.github.io",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/34c94d08-e4d2-424d-9e09-197c2e87a05e-mwKLLMCFXtJRI0Sb2JJt14Xzf91w9j.png",
+      "imageAlt": "林子軒 - 個人網站",
+      "highlight": false
+    }
+  ],
+  "en": [
+    {
+      "id": "6ac0f5ee407aedcb69f0c7e8",
+      "slug": "xuanlin-website",
+      "title": "林子軒 - 個人網站",
+      "path": "https://xuanlin129.github.io",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/34c94d08-e4d2-424d-9e09-197c2e87a05e-mwKLLMCFXtJRI0Sb2JJt14Xzf91w9j.png",
+      "imageAlt": "林子軒 - 個人網站",
+      "highlight": false
+    }
+  ]
+}

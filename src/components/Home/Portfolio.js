@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import * as Ant from 'antd';
 import CtaButton from '../../components/CtaButton';
-import projects from '../../config/projects';
+import { useProjects } from '../../hooks/useProjects';
 import MarqueeModule from 'react-fast-marquee';
 
 const Marquee = MarqueeModule.default ?? MarqueeModule;
@@ -12,6 +12,7 @@ const { useBreakpoint } = Ant.Grid;
 
 export default function Portfolio() {
   const { t } = useTranslation();
+  const projects = useProjects();
   const screens = useBreakpoint();
   const portfolioRef = React.useRef();
   const [autoPlay, setAutoPlay] = React.useState(false);
@@ -45,7 +46,7 @@ export default function Portfolio() {
           .filter((it) => it.highlight)
           ?.map((work) => {
             return (
-              <div key={work.name} className="marquee-item-wrapper">
+              <div key={work.id} className="marquee-item-wrapper">
                 <StyledCard
                   onClick={() => {
                     window.open(work.path);
@@ -53,12 +54,12 @@ export default function Portfolio() {
                   hoverable
                   cover={
                     <div className="image-cover">
-                      <img draggable={false} alt={t(work.name)} loading="lazy" decoding="async" src={work.image} />
+                      <img draggable={false} alt={work.imageAlt || work.title || t(work.name)} loading="lazy" decoding="async" src={work.image} />
                       <div className="mask">View Project</div>
                     </div>
                   }
                 >
-                  <Ant.Card.Meta title={t(work.name)} />
+                  <Ant.Card.Meta title={work.title || t(work.name)} />
                 </StyledCard>
               </div>
             );
@@ -81,7 +82,7 @@ export default function Portfolio() {
           .filter((it) => it.highlight)
           ?.map((work) => {
             return (
-              <div key={work.name} className="carousel-item-wrapper">
+              <div key={work.id} className="carousel-item-wrapper">
                 <StyledCard
                   onClick={() => {
                     window.open(work.path);
@@ -89,12 +90,12 @@ export default function Portfolio() {
                   hoverable
                   cover={
                     <div className="image-cover">
-                      <img draggable={false} alt={t(work.name)} loading="lazy" decoding="async" src={work.image} />
+                      <img draggable={false} alt={work.imageAlt || work.title || t(work.name)} loading="lazy" decoding="async" src={work.image} />
                       <div className="mask">View Project</div>
                     </div>
                   }
                 >
-                  <Ant.Card.Meta title={t(work.name)} />
+                  <Ant.Card.Meta title={work.title || t(work.name)} />
                 </StyledCard>
               </div>
             );

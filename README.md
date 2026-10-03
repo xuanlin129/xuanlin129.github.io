@@ -137,3 +137,17 @@ npm test
 ## 📄 授權
 
 此專案僅供個人作品展示使用。
+
+## 作品集 API
+
+後端 API 位於 `xuanlin-website`。在 `.env.local` 設定：
+
+```dotenv
+VITE_PROJECTS_API_BASE_URL=https://your-xuanlin-website.vercel.app
+```
+
+此值是公開 API 來源，不是密鑰。GitHub Pages 請在 repository Settings → Secrets and variables → Actions → Variables 設定同名變數，再重新執行 Deploy。
+
+建置時會取得中英文已發布作品，寫入 `src/config/projects.snapshot.json`，讓預先產生的 HTML 與 SEO 使用 DB 資料。API 讀取失敗會中止建置，避免發布不完整頁面。瀏覽器載入後會再次讀取 API，取得最新內容；失敗時保留建置快照。未設定 API 時沿用既有作品資料。
+
+請先部署後端並匯入作品，再設定此前台變數。後台發布或下架後，瀏覽器讀取會更新；搜尋引擎使用的靜態 HTML 需重新建置部署。請勿把 Blob token 或 MongoDB 連線資訊放入前台環境變數。

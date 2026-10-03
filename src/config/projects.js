@@ -1,9 +1,10 @@
+import snapshot from './projects.snapshot.json';
 import dutchieImage from '@/assets/dutchie.jpg';
 import gohanCookingImage from '@/assets/gohan-cooking.jpg';
 import portfolioImage from '@/assets/xuan-web.png';
 import shinhuadeImage from '@/assets/shinhuade.png';
 import flipClockImage from '@/assets/flip-clock.png';
-export default [
+const legacyProjects = [
   {
     id: 'dutchie',
     name: 'projects.dutchie.name',
@@ -47,3 +48,9 @@ export default [
     highlight: false,
   },
 ];
+
+export function getProjects(locale = 'zh-TW') {
+  return snapshot[locale] ?? legacyProjects;
+}
+
+export default legacyProjects;

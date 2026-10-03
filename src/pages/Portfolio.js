@@ -2,14 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col, Pagination } from 'antd';
 import { useTranslation } from 'react-i18next';
-import projectsData from '../config/projects';
+import { useProjects } from '../hooks/useProjects';
 
 function Portfolio() {
   const { t } = useTranslation();
+  const projectsData = useProjects();
   const [cursorState, setCursorState] = React.useState({ x: 0, y: 0, isHovering: false });
   const [currentPage, setCurrentPage] = React.useState(1);
   const pageSize = 6;
-  const startIndex = (currentPage - 1) * pageSize;
+  const displayedPage = Math.min(currentPage, Math.max(1, Math.ceil(projectsData.length / pageSize)));
+  const startIndex = (displayedPage - 1) * pageSize;
   const projects = projectsData.slice(startIndex, startIndex + pageSize);
 
   React.useEffect(() => {
@@ -58,8 +60,8 @@ function Portfolio() {
       <section className="page-body">
         <div className="container" style={{ minHeight: '60vh' }}>
           <Row gutter={[48, 48]}>
-            {projects.map((it, idx) => (
-                  <Col span={24} md={12} lg={8} key={idx}>
+            {projects.map((it) => (
+                  <Col span={24} md={12} lg={8} key={it.id}>
                     <Card className="card">
                       <div
                         className="image-box"
@@ -67,10 +69,10 @@ function Portfolio() {
                           window.open(it.path);
                         }}
                       >
-                        <img src={it.image} alt={t(it.name)} loading="lazy" decoding="async" />
+                        <img src={it.image} alt={it.imageAlt || it.title || t(it.name)} loading="lazy" decoding="async" />
                       </div>
                       <div className="content">
-                        <h4>{t(it.name)}</h4>
+                        <h4>{it.title || t(it.name)}</h4>
                         <a href={it.path} target="_blank" rel="noopener noreferrer">
                           {it.path}
                         </a>
@@ -82,7 +84,7 @@ function Portfolio() {
           {projectsData.length > 0 && (
             <div style={{ marginTop: 40, display: 'flex', justifyContent: 'center' }}>
               <Pagination
-                current={currentPage}
+                current={displayedPage}
                 pageSize={pageSize}
                 total={projectsData.length}
                 onChange={(page) => setCurrentPage(page)}

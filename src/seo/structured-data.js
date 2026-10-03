@@ -1,5 +1,5 @@
 import { getPageUrl, site } from '../config/site';
-import projects from '../config/projects';
+import { getProjects } from '../config/projects';
 
 function createPerson(t) {
   return {
@@ -16,7 +16,8 @@ function createPerson(t) {
   };
 }
 
-function createProjectList(t) {
+function createProjectList(t, language) {
+  const projects = getProjects(language === 'en' ? 'en' : 'zh-TW');
   return {
     '@type': 'ItemList',
     '@id': `${getPageUrl('portfolio')}#projects`,
@@ -24,7 +25,7 @@ function createProjectList(t) {
     itemListElement: projects.map((project, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: t(project.name),
+      name: project.title || t(project.name),
       url: project.path,
     })),
   };
@@ -58,7 +59,7 @@ export function createStructuredData(page, t, language) {
   const graph = [website, person, webpage];
   if (page === 'about' || page === 'home') webpage.mainEntity = { '@id': person['@id'] };
   if (page === 'portfolio') {
-    const projectList = createProjectList(t);
+    const projectList = createProjectList(t, language);
     webpage.mainEntity = { '@id': projectList['@id'] };
     graph.push(projectList);
   }

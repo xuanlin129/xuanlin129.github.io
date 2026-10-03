@@ -24,7 +24,7 @@ export default defineConfig({
   },
   server: {
     host: true, // ⭐ 關鍵
-    port: 3000, // 可選，跟你 ngrok 的 port 對齊
+    port: 5173, // 可選，跟你 ngrok 的 port 對齊
     strictPort: true, // 可選
     allowedHosts: ['a5ea-2407-4d00-5c03-662-a82c-67b3-c803-fed.ngrok-free.app'],
   },
