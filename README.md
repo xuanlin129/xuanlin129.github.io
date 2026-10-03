@@ -93,7 +93,7 @@ npm run preview
 - `src/entry-server.js`：每次請求建立獨立路由、語系、Helmet context 與樣式快取，輸出 HTML、標題與樣式。
 - `src/router/index.js`：共用一般路徑路由；初始頁面先載入，其餘頁面延遲載入。
 
-SSR 初始語系為 `zh-TW`，確保伺服器與瀏覽器首次渲染一致；hydration 後恢復語系偵測與使用者已儲存的偏好。頁面網址改為 `/about`、`/portfolio`、`/contact`。
+SSR 初始語系為 `zh-TW`，確保伺服器與瀏覽器首次渲染一致。首次進站固定繁體中文，不依瀏覽器語系自動切換；hydration 後只恢復使用者已儲存的語系偏好。頁面網址改為 `/about`、`/portfolio`、`/contact`。
 
 ### Node.js SSR 部署
 

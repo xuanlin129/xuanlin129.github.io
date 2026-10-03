@@ -11,11 +11,14 @@ import { setRouter } from './utils';
 function BrowserLanguage({ i18n }) {
   useEffect(() => {
     const detector = new LanguageDetector();
-    detector.init();
+    detector.init({
+      order: ['localStorage'],
+      caches: ['localStorage'],
+    });
     const languages = detector.detect();
     const language = i18n.services.languageUtils.getBestMatchFromCodes(
       Array.isArray(languages) ? languages : [languages],
-    );
+    ) || 'zh-TW';
     const handleLanguageChange = (nextLanguage) => {
       detector.cacheUserLanguage(nextLanguage);
       document.documentElement.lang = nextLanguage;
