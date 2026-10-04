@@ -41,7 +41,7 @@ export default function Portfolio() {
         {screens.md && <CtaButton target="/portfolio" />}
       </div>
 
-      <StyledMarquee speed={100} autoFill play={autoPlay}>
+      <StyledMarquee speed={100} autoFill play={true}>
         {projects
           .filter((it) => it.highlight)
           ?.map((work) => {
@@ -54,7 +54,13 @@ export default function Portfolio() {
                   hoverable
                   cover={
                     <div className="image-cover">
-                      <img draggable={false} alt={work.imageAlt || work.title} loading="lazy" decoding="async" src={work.image} />
+                      <img
+                        draggable={false}
+                        alt={work.imageAlt || work.title}
+                        loading="lazy"
+                        decoding="async"
+                        src={work.image}
+                      />
                       <div className="mask">View Project</div>
                     </div>
                   }
