@@ -19,9 +19,9 @@
     },
     "intro": {
       "title": "Introduction",
-      "subtitle": "Hi! I'm Xuan",
-      "desc1": "I’m Xuan Lin, a front-end developer focused on web design and web development. I use React to build intuitive, seamless interactive experiences.",
-      "desc2": "From the finest UI details and the rhythm of interactions to the overall architecture, I strive for more than just 'functionality'—I aim for 'comfort.' To me, frontend development is more than writing code; it’s about bridging the gap between people and technology, making every digital experience feel closer and more human."
+      "subtitle": "Hi! I'm Xuan Lin",
+      "desc1": "I’m a front-end developer who builds websites and cross-platform apps with React and React Native, turning ideas and requirements into clear, smooth user experiences.",
+      "desc2": "I care about interface details as much as readable, maintainable code. From layouts and interaction feedback to data integration, I aim to make every feature easy to use and ready to grow with the product."
     },
     "portfolio": {
       "title": "Portfolio"
@@ -35,12 +35,13 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "From web to app, breathing life into every interface.",
+    "subtitle": "From websites to apps, turning requirements into effortless everyday experiences",
     "intro": {
       "title": "Hi! I'm Xuan Lin.",
-      "desc1": "For me, front-end development is where technology meets humanity.",
-      "desc2": "Code isn't just cold instructions; it's the bridge connecting users. Rather than blindly chasing new technologies, I focus on creating 'intuition'—making technology invisible and experiences memorable.",
-      "desc3": "I approach projects holistically, focusing on every transformation from backend logic to frontend details. Regardless of the device, my goal remains constant: to build smooth, refined, and warm digital products that bridge the gap between users and the digital world."
+      "desc1": "After moving from chemical engineering into front-end development, I brought my habits of analyzing data and investigating problems into product development. I start by understanding the context and the problem, then break requirements down into features that can be implemented and validated step by step.",
+      "desc2": "My development experience spans e-commerce platforms, web platforms, and cross-platform iOS and Android apps, including API integration, reusable components, and interactive features. I care about clear user flows and code structures that support future growth.",
+      "desc3": "I also integrate AI tools into my development workflow to clarify requirements, explore implementation approaches, and troubleshoot issues, checking the results through code review and functional verification. I turn effective practices into repeatable workflows to continually improve how I build.",
+      "desc4": "To me, good front-end development brings interface details and application logic together to serve users. I aim to combine an engineering mindset, thoughtful user experiences, and AI-assisted development to build products that are easy to use and maintain."
     },
     "skills": {
       "title": "Skills",

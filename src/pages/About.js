@@ -52,22 +52,26 @@ function About() {
   React.useEffect(() => {
     if (experiences.length === 0) return;
     const media = gsap.matchMedia();
-    media.add('(min-width: 768px)', () => {
-      gsap.to(experienceInnerRef.current, {
-        x: () => -Math.max(0, experienceInnerRef.current.scrollWidth - window.innerWidth),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: experienceRef.current,
-          pin: true,
-          anticipatePin: 1,
-          scrub: 1,
-          start: 'center center',
-          end: () => `+=${experienceInnerRef.current.scrollWidth / 3}`,
-          invalidateOnRefresh: true,
-          pinSpacing: true,
-        },
-      });
-    }, experienceRef);
+    media.add(
+      '(min-width: 768px)',
+      () => {
+        gsap.to(experienceInnerRef.current, {
+          x: () => -Math.max(0, experienceInnerRef.current.scrollWidth - window.innerWidth),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: experienceRef.current,
+            pin: true,
+            anticipatePin: 1,
+            scrub: 1,
+            start: 'center center',
+            end: () => `+=${experienceInnerRef.current.scrollWidth / 3}`,
+            invalidateOnRefresh: true,
+            pinSpacing: true,
+          },
+        });
+      },
+      experienceRef,
+    );
 
     return () => {
       media.revert();
@@ -95,6 +99,7 @@ function About() {
               <p>{t('about.intro.desc1')}</p>
               <p>{t('about.intro.desc2')}</p>
               <p>{t('about.intro.desc3')}</p>
+              <p>{t('about.intro.desc4')}</p>
             </Col>
           </Row>
         </div>
@@ -186,7 +191,9 @@ function About() {
                   <ul>
                     {it.list.map((li) => (
                       <li key={li.id ?? li.title}>
-                        <p className="achievement-title"><strong>{li.title}</strong></p>
+                        <p className="achievement-title">
+                          <strong>{li.title}</strong>
+                        </p>
                         <p className="achievement-description">{li.content}</p>
                       </li>
                     ))}
@@ -409,7 +416,7 @@ const Experience = styled.section`
         font-size: 1.5rem;
         padding-bottom: 30px;
         position: relative;
-        font-family: 'EN_Bd';
+        font-family: 'EN_Bd', 'TW_Bd', sans-serif;
 
         &::before {
           content: '';
@@ -453,7 +460,7 @@ const Experience = styled.section`
         }
 
         & h3 {
-          font-size: 1.25rem;
+          font-size: 1.5rem;
           font-weight: 700;
         }
 
@@ -561,6 +568,9 @@ const Experience = styled.section`
             display: none;
           }
 
+          & h3 {
+            font-size: 1.25rem;
+          }
         }
       }
     }
