@@ -24,7 +24,9 @@ function About() {
       label: t('about.skills.core'),
       children: [
         { label: 'JavaScript', color: 'gold' },
+        { label: 'TypeScript', color: 'geekblue' },
         { label: 'React', color: 'blue' },
+        { label: 'Next.js', color: 'default' },
         { label: 'React Native', color: 'cyan' },
         { label: 'Vue', color: 'green' },
       ],
@@ -33,6 +35,8 @@ function About() {
       label: t('about.skills.ui'),
       children: [
         { label: 'Ant Design', color: 'magenta' },
+        { label: 'shadcn/ui', color: 'default' },
+        { label: 'Tailwind CSS', color: 'cyan' },
         { label: 'Vuetify', color: 'geekblue' },
         { label: 'Bootstrap', color: 'purple' },
       ],
