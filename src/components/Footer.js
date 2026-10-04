@@ -23,14 +23,15 @@ function Footer() {
       <div className="container">
         <Row justify="space-between" align="middle" gutter={[32, 32]}>
           <Col xs={24} md={12}>
-            <Logo
-              src={logoImage}
-              alt="Logo"
-              onClick={() => AppActions.navigate('/')}
-            />
-            <p className="desc">{t('about.intro.desc1')}</p>
+            <Logo src={logoImage} alt="Logo" onClick={() => AppActions.navigate('/')} />
+            <p className="desc">{t('home.intro.desc1')}</p>
             <SocialLinks>
-              <a aria-label="GitHub — Xuan Lin" href="https://github.com/xuanlin129" target="_blank" rel="noopener noreferrer">
+              <a
+                aria-label="GitHub — Xuan Lin"
+                href="https://github.com/xuanlin129"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github size={24} />
               </a>
               <a aria-label="Email — Xuan Lin" href="mailto:xuan.lin129@gmail.com">
