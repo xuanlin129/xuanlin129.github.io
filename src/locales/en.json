@@ -13,26 +13,6 @@
     "portfolio": "Portfolio",
     "contact": "Contact me"
   },
-  "projects": {
-    "dutchie": {
-      "name": "Dutchie"
-    },
-    "gohan-cooking": {
-      "name": "Gohan Cooking"
-    },
-    "xuan-lin": {
-      "name": "Xuan Lin - Personal Website"
-    },
-    "shinhuade": {
-      "name": "Shin Hua De Enterprise Co., Ltd."
-    },
-    "duo": {
-      "name": "Duo - Brand Ambassador"
-    },
-    "flip-clock": {
-      "name": "Flip Clock"
-    }
-  },
   "home": {
     "hero": {
       "subtitle": "Front-end Developer / Web Design / Web Development"
@@ -85,70 +65,6 @@
           "time": "2016.09-2020.06",
           "school": "Tamkang University",
           "degree": "Bachelor of Chemical and Materials Engineering"
-        }
-      ]
-    },
-    "experience": {
-      "jobs": [
-        {
-          "time": "2021.07 - 2022.06",
-          "company": "Everlight Chemical",
-          "job": "Chemical Engineer",
-          "desc": "Focused on precision chemical processes and high-quality dye purification, cultivating rigor for details and system stability.",
-          "list": [
-            {
-              "title": "Precision Process & Quality Management",
-              "content": "Led high-quality dye purification procedures, established high-standard SOPs, ensuring product and system stability."
-            },
-            {
-              "title": "Membrane Filtration System",
-              "content": "Precisely controlled process parameters, ensuring product purity met standards through data monitoring, significantly improving filtration efficiency."
-            },
-            {
-              "title": "Data-Driven Decision Making",
-              "content": "Analyzed process data for anomaly diagnosis, establishing systematic logic to prevent potential deviations and ensure continuous production line operation."
-            }
-          ]
-        },
-        {
-          "time": "2024.01 - 2024.12",
-          "company": "Asian Bridge",
-          "job": "Front-end Intern",
-          "desc": "Responsible for developing a Japanese e-commerce platform, optimizing system stability and enhancing the cross-border shopping experience.",
-          "list": [
-            {
-              "title": "Systematic Interface Construction",
-              "content": "Built a modular component library and standardized development guidelines, increasing code reusability by 40% and ensuring high visual consistency across functional modules."
-            },
-            {
-              "title": "Cross-Device UI/UX Optimization",
-              "content": "Implemented responsive web design, resolving cross-device visual discrepancies and enhancing interface usability and aesthetics."
-            },
-            {
-              "title": "Shopping Flow & State Management",
-              "content": "Developed a high-performance shopping cart system and complex state management logic, reducing checkout drop-off rates and effectively increasing platform conversion rates by improved interaction feedback and error handling."
-            }
-          ]
-        },
-        {
-          "time": "2025.07 - Now",
-          "company": "Revtel Tech",
-          "job": "Front-end Developer",
-          "desc": "Responsible for developing and maintaining Web platforms and cross-platform Apps (iOS/Android), ensuring consistency in multi-terminal user experiences.",
-          "list": [
-            {
-              "title": "Cross-Platform Dev & Architecture Optimization",
-              "content": "Utilized React technology to abstract business logic between Web and App, saving development time."
-            },
-            {
-              "title": "API Integration & Data Processing",
-              "content": "Integrated asynchronous APIs and data import, ensuring seamless connection between frontend and backend logic."
-            },
-            {
-              "title": "High Componentization",
-              "content": "Developed company internal component library based on Ant Design, improving team UI development efficiency and maintaining visual unity."
-            }
-          ]
         }
       ]
     },

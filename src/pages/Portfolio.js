@@ -69,10 +69,10 @@ function Portfolio() {
                           window.open(it.path);
                         }}
                       >
-                        <img src={it.image} alt={it.imageAlt || it.title || t(it.name)} loading="lazy" decoding="async" />
+                        <img src={it.image} alt={it.imageAlt || it.title} loading="lazy" decoding="async" />
                       </div>
                       <div className="content">
-                        <h4>{it.title || t(it.name)}</h4>
+                        <h4>{it.title}</h4>
                         <a href={it.path} target="_blank" rel="noopener noreferrer">
                           {it.path}
                         </a>

@@ -54,12 +54,12 @@ export default function Portfolio() {
                   hoverable
                   cover={
                     <div className="image-cover">
-                      <img draggable={false} alt={work.imageAlt || work.title || t(work.name)} loading="lazy" decoding="async" src={work.image} />
+                      <img draggable={false} alt={work.imageAlt || work.title} loading="lazy" decoding="async" src={work.image} />
                       <div className="mask">View Project</div>
                     </div>
                   }
                 >
-                  <Ant.Card.Meta title={work.title || t(work.name)} />
+                  <Ant.Card.Meta title={work.title} />
                 </StyledCard>
               </div>
             );
@@ -90,12 +90,12 @@ export default function Portfolio() {
                   hoverable
                   cover={
                     <div className="image-cover">
-                      <img draggable={false} alt={work.imageAlt || work.title || t(work.name)} loading="lazy" decoding="async" src={work.image} />
+                      <img draggable={false} alt={work.imageAlt || work.title} loading="lazy" decoding="async" src={work.image} />
                       <div className="mask">View Project</div>
                     </div>
                   }
                 >
-                  <Ant.Card.Meta title={work.title || t(work.name)} />
+                  <Ant.Card.Meta title={work.title} />
                 </StyledCard>
               </div>
             );

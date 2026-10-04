@@ -4,10 +4,13 @@ import { test } from 'node:test';
 import { render } from '../dist/server/entry-server.js';
 import { renderDocument } from '../scripts/html.js';
 
+const projectSnapshot = JSON.parse(await readFile(new URL('../src/config/projects.snapshot.json', import.meta.url), 'utf8'));
+const publishedProjects = projectSnapshot['zh-TW'];
+
 const pages = [
   ['/', '林子軒 Xuan Lin｜前端工程師・網頁設計與網頁開發', '前端工程師 / 網頁設計 / 網頁開發'],
   ['/about', '個人簡介｜林子軒 Xuan Lin・前端工程師', '關於我'],
-  ['/portfolio', '作品集｜林子軒 Xuan Lin', 'Dutchie'],
+  ['/portfolio', '作品集｜林子軒 Xuan Lin', '作品集'],
   ['/contact', '聯絡我｜林子軒 Xuan Lin・專案合作與面試邀約', '聯絡我'],
 ];
 
@@ -89,7 +92,8 @@ for (const [path] of pages) {
     }
     if (path === '/portfolio') {
       const list = data['@graph'].find((item) => item['@type'] === 'ItemList');
-      assert.equal(list.itemListElement.length, 5);
+      assert.deepEqual(list.itemListElement.map((project) => ({ name: project.name, url: project.url })),
+        publishedProjects.map((project) => ({ name: project.title, url: project.path })));
       list.itemListElement.forEach((project) => assert.ok(html.includes(project.name)));
     }
   });

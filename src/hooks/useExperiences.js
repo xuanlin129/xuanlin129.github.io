@@ -1,13 +1,13 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import snapshot from '../config/experiences.snapshot.json';
 import { fetchAboutExperiences } from '../services/experience-api';
 
 export function useExperiences() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const locale = i18n.resolvedLanguage === 'en' ? 'en' : 'zh-TW';
   const [result, setResult] = useState(null);
-  const fallback = useMemo(() => snapshot[locale] ?? t('about.experience.jobs', { returnObjects: true }), [locale, t]);
+  const fallback = snapshot[locale] ?? [];
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     if (!baseUrl) return;

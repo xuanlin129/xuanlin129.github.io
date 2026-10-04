@@ -25,7 +25,7 @@ function createProjectList(t, language) {
     itemListElement: projects.map((project, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: project.title || t(project.name),
+      name: project.title,
       url: project.path,
     })),
   };

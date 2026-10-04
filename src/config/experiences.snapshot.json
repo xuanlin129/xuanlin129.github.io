@@ -6,22 +6,72 @@
       "time": "2021.07 - 2022.06",
       "company": "永光化學",
       "job": "化工工程師",
-      "desc": "專注於精密化學製程與高品質染料精製，培養對細節與系統穩定性的嚴謹要求。",
+      "desc": "負責染料精製與製程監控，透過薄膜過濾、製程參數控管與數據分析，維持產品品質與生產穩定性，累積系統化分析及問題排查能力。",
       "list": [
         {
           "id": "6ac1e681847144431806ac40",
-          "title": "精密製程與品質管理",
-          "content": "主導高品質染料精製程序，建立高標準操作規範（SOP），達成對產品與系統穩定性。"
+          "title": "染料精製與品質控管",
+          "content": "執行染料精製程序，依標準作業流程控管製程條件，確認產品純度與品質符合要求。"
         },
         {
           "id": "6ac1e681847144431806ac41",
-          "title": "薄膜過濾系統",
-          "content": "精確控管製程參數，透過數據監測確保產品純度穩定符合標準，並顯著提升過濾效率。"
+          "title": "薄膜過濾與製程監控",
+          "content": "操作薄膜過濾系統，監測製程參數與過濾狀況，依生產數據調整操作條件，維持精製流程的穩定性。"
         },
         {
           "id": "6ac1e681847144431806ac42",
-          "title": "數據驅動決策",
-          "content": "運用製程數據分析進行異常診斷，建立系統化邏輯以預防潛在偏差，確保產線持續運作。"
+          "title": "數據分析與異常排查",
+          "content": "分析製程數據，釐清異常原因與可能影響，協助調整製程，降低品質偏差對生產的影響。"
+        }
+      ]
+    },
+    {
+      "id": "6ac1fa65847144431806ac7a",
+      "startMonth": "2024-01",
+      "time": "2024.01 - 2024.12",
+      "company": "優橋貿易",
+      "job": "前端實習生",
+      "desc": "參與日本電商平台的前端開發，負責共用元件、響應式介面與購物車功能，將購物流程中的資料與操作需求轉化為可維護的介面。",
+      "list": [
+        {
+          "id": "6ac1fa65847144431806ac7b",
+          "title": "共用元件與模組化開發",
+          "content": "將重複使用的介面整理為共用元件，統一樣式與使用方式，減少重複實作，方便後續功能擴充與維護。"
+        },
+        {
+          "id": "6ac1fa65847144431806ac7c",
+          "title": "響應式介面與跨裝置調整",
+          "content": "實作響應式版面，調整不同螢幕尺寸下的排版與互動呈現，改善跨裝置的顯示差異與操作體驗。"
+        },
+        {
+          "id": "6ac1fa65847144431806ac7d",
+          "title": "購物車與下單流程",
+          "content": "開發購物車功能與相關狀態管理，處理操作回饋及錯誤提示，讓購物與下單過程中的資訊呈現更清楚。"
+        }
+      ]
+    },
+    {
+      "id": "6ac1fae7847144431806ac96",
+      "startMonth": "2025-07",
+      "time": "2025.07 - 至今",
+      "company": "忻旅科技",
+      "job": "前端工程師",
+      "desc": "負責 Web 平台與 iOS／Android 跨平台 App 的開發與維護，將專案需求轉化為介面與互動功能，涵蓋 API 串接、共用元件開發與 AI 輔助開發流程。",
+      "list": [
+        {
+          "id": "6ac1fae7847144431806ac97",
+          "title": "Web 與跨平台 App 開發",
+          "content": "使用 React 相關技術開發 Web 與 App 功能，整理不同平台間可共用的業務邏輯，減少重複實作，方便後續功能擴充與維護。"
+        },
+        {
+          "id": "6ac1fae7847144431806ac98",
+          "title": "內部共用元件開發",
+          "content": "基於 Ant Design 擴充公司內部元件庫，整理常用介面與互動模式，提升元件重用性，維持不同功能間的視覺與操作一致性。"
+        },
+        {
+          "id": "6ac214d7847144431806af23",
+          "title": "AI 輔助開發流程",
+          "content": "將 AI 工具融入需求拆解、程式實作與問題排查，搭配人工檢視與功能驗證，逐步整理可重複使用的開發工作流程。"
         }
       ]
     }
@@ -31,24 +81,74 @@
       "id": "6ac1e681847144431806ac3f",
       "startMonth": "2021-07",
       "time": "2021.07 - 2022.06",
-      "company": "永光化學",
-      "job": "化工工程師",
-      "desc": "專注於精密化學製程與高品質染料精製，培養對細節與系統穩定性的嚴謹要求。",
+      "company": "Everlight Chemical",
+      "job": "Chemical Engineer",
+      "desc": "Responsible for dye purification and process monitoring, using membrane filtration, process control, and data analysis to maintain product quality and production stability. Developed a systematic approach to analysis and troubleshooting.",
       "list": [
         {
           "id": "6ac1e681847144431806ac40",
-          "title": "精密製程與品質管理",
-          "content": "主導高品質染料精製程序，建立高標準操作規範（SOP），達成對產品與系統穩定性。"
+          "title": "Dye Purification & Quality Control",
+          "content": "Performed dye purification procedures and controlled process conditions according to standard operating procedures to meet product purity and quality requirements."
         },
         {
           "id": "6ac1e681847144431806ac41",
-          "title": "薄膜過濾系統",
-          "content": "精確控管製程參數，透過數據監測確保產品純度穩定符合標準，並顯著提升過濾效率。"
+          "title": "Membrane Filtration & Process Monitoring",
+          "content": "Operated membrane filtration systems, monitored process parameters and filtration performance, and adjusted operating conditions based on production data to maintain process stability."
         },
         {
           "id": "6ac1e681847144431806ac42",
-          "title": "數據驅動決策",
-          "content": "運用製程數據分析進行異常診斷，建立系統化邏輯以預防潛在偏差，確保產線持續運作。"
+          "title": "Data Analysis & Troubleshooting",
+          "content": "Analyzed process data to identify the causes and potential impact of abnormalities, supporting process adjustments to reduce quality deviations."
+        }
+      ]
+    },
+    {
+      "id": "6ac1fa65847144431806ac7a",
+      "startMonth": "2024-01",
+      "time": "2024.01 - 2024.12",
+      "company": "Asian Bridge",
+      "job": "Front-End Developer Intern",
+      "desc": "Contributed to front-end development for a Japanese e-commerce platform, including reusable components, responsive interfaces, and shopping cart functionality. Translated shopping flow requirements into maintainable interfaces.",
+      "list": [
+        {
+          "id": "6ac1fa65847144431806ac7b",
+          "title": "Reusable Components & Modular Development",
+          "content": "Built reusable components for recurring interface patterns and standardized their styling and usage to reduce duplicate implementation and simplify future development."
+        },
+        {
+          "id": "6ac1fa65847144431806ac7c",
+          "title": "Responsive Interfaces & Cross-Device Adjustments",
+          "content": "Implemented responsive layouts and adjusted interface behavior across screen sizes to improve visual consistency and usability."
+        },
+        {
+          "id": "6ac1fa65847144431806ac7d",
+          "title": "Shopping Cart & Checkout Flow",
+          "content": "Developed shopping cart functionality and related state management, including interaction feedback and error messages to make the shopping and checkout process clearer."
+        }
+      ]
+    },
+    {
+      "id": "6ac1fae7847144431806ac96",
+      "startMonth": "2025-07",
+      "time": "2025.07 - Present",
+      "company": "RevtelTech",
+      "job": "Front-End Engineer",
+      "desc": "Develop and maintain web platforms and cross-platform iOS and Android apps, translating project requirements into interfaces and interactive features. Responsibilities include API integration, reusable component development, and AI-assisted development workflows.",
+      "list": [
+        {
+          "id": "6ac1fae7847144431806ac97",
+          "title": "Web & Cross-Platform App Development",
+          "content": "Use React technologies to build web and app features, extracting shared business logic across platforms to reduce duplicate implementation and simplify ongoing development and maintenance."
+        },
+        {
+          "id": "6ac1fae7847144431806ac98",
+          "title": "Internal Component Library Development",
+          "content": "Extend Ant Design to build internal reusable components, standardizing common interface and interaction patterns to maintain visual and behavioral consistency."
+        },
+        {
+          "id": "6ac214d7847144431806af23",
+          "title": "AI-Assisted Development Workflows",
+          "content": "Incorporate AI tools into task breakdown, implementation, and troubleshooting, combining AI assistance with manual review and functional verification to establish repeatable development workflows."
         }
       ]
     }
