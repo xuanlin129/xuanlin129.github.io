@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid, Row, Col, Descriptions, Tag, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import AnimateWaveDivider from '../components/AnimatedWaveDivider';
-import { LaptopCode, Book, CaretRight, ArrowRight } from '@styled-icons/fa-solid';
+import { LaptopCode, Book, ArrowRight } from '@styled-icons/fa-solid';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as AppActions from '../utils';
@@ -51,7 +51,8 @@ function About() {
 
   React.useEffect(() => {
     if (experiences.length === 0) return;
-    const ctx = gsap.context(() => {
+    const media = gsap.matchMedia();
+    media.add('(min-width: 768px)', () => {
       gsap.to(experienceInnerRef.current, {
         x: () => -Math.max(0, experienceInnerRef.current.scrollWidth - window.innerWidth),
         ease: 'none',
@@ -69,7 +70,7 @@ function About() {
     }, experienceRef);
 
     return () => {
-      ctx.revert();
+      media.revert();
     };
   }, [experiences]);
 
@@ -86,11 +87,7 @@ function About() {
         <div className="container">
           <Row gutter={[32, 32]} style={{ justifyContent: 'space-evenly' }}>
             <Col xs={24} sm={8} className="graduation">
-              <img
-                style={{ width: '100%' }}
-                src={graduationImage}
-                alt={t('seo.aboutPortraitAlt')}
-              />
+              <img style={{ width: '100%' }} src={graduationImage} alt={t('seo.aboutPortraitAlt')} />
               <div className="block"></div>
             </Col>
             <Col xs={24} sm={12} className="description">
@@ -189,13 +186,8 @@ function About() {
                   <ul>
                     {it.list.map((li) => (
                       <li key={li.id ?? li.title}>
-                        <strong>
-                          <CaretRight size={18} />
-                        </strong>
-                        <div>
-                          <p>{li.title}</p>
-                          <p>{li.content}</p>
-                        </div>
+                        <p className="achievement-title"><strong>{li.title}</strong></p>
+                        <p className="achievement-description">{li.content}</p>
                       </li>
                     ))}
                   </ul>
@@ -461,7 +453,7 @@ const Experience = styled.section`
         }
 
         & h3 {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           font-weight: 700;
         }
 
@@ -470,21 +462,27 @@ const Experience = styled.section`
           margin-bottom: 0.5rem;
         }
 
+        & p {
+          font-size: 0.9rem;
+        }
+
         & ul {
-          margin-top: 10px;
+          margin-top: 16px;
 
           & li {
-            display: flex;
-            margin-bottom: 5px;
-            gap: 8px;
-            font-size: 0.8rem;
+            & + li {
+              margin-top: 18px;
+            }
 
-            & > div {
-              padding-top: 2px;
+            & > .achievement-title {
+              margin-bottom: 4px;
+              font-weight: 700;
+              line-height: 1.5;
+            }
 
-              & > p:first-child {
-                text-decoration: underline;
-              }
+            & > .achievement-description {
+              color: #555;
+              line-height: 1.6;
             }
           }
         }
@@ -499,6 +497,70 @@ const Experience = styled.section`
         }
         &:last-child {
           margin-right: 10vw;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    & > .horizontal-container {
+      display: block;
+      width: auto;
+      margin: 0 5vw;
+      will-change: auto;
+
+      & > .item {
+        width: 100%;
+        padding: 0 0 36px 42px;
+        position: relative;
+        overflow-wrap: anywhere;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 9px;
+          width: 2px;
+          background: var(--dark-gray-color);
+        }
+
+        &:first-child::before {
+          top: 14px;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        & > .time {
+          padding-bottom: 0;
+          font-size: 1.25rem;
+          line-height: 28px;
+
+          &::before,
+          &::after {
+            top: 14px;
+            bottom: auto;
+            transform: translateY(-50%);
+          }
+
+          &::before {
+            left: -42px;
+          }
+
+          &::after {
+            left: calc(-42px + (var(--dot-width) - var(--min-dot-width)) / 2);
+          }
+        }
+
+        & > .content {
+          padding-top: 16px;
+
+          &::before {
+            display: none;
+          }
+
         }
       }
     }
