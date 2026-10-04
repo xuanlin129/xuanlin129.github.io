@@ -1,5 +1,6 @@
 import graduationImage from '@/assets/graduation.png';
 import React from 'react';
+import { useExperiences } from '../hooks/useExperiences';
 import styled from 'styled-components';
 import { Grid, Row, Col, Descriptions, Tag, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -46,12 +47,13 @@ function About() {
   ];
 
   const educations = t('about.education.history', { returnObjects: true });
-  const experiences = t('about.experience.jobs', { returnObjects: true });
+  const experiences = useExperiences();
 
   React.useEffect(() => {
+    if (experiences.length === 0) return;
     const ctx = gsap.context(() => {
       gsap.to(experienceInnerRef.current, {
-        x: () => -(experienceInnerRef.current.scrollWidth - window.innerWidth),
+        x: () => -Math.max(0, experienceInnerRef.current.scrollWidth - window.innerWidth),
         ease: 'none',
         scrollTrigger: {
           trigger: experienceRef.current,
@@ -69,7 +71,7 @@ function About() {
     return () => {
       ctx.revert();
     };
-  }, []);
+  }, [experiences]);
 
   return (
     <Wrapper>
@@ -178,7 +180,7 @@ function About() {
         <div className="horizontal-container" ref={experienceInnerRef}>
           {experiences.map((it, idx) => {
             return (
-              <div key={idx} className="item">
+              <div key={it.id ?? idx} className="item">
                 <p className="time">{it.time}</p>
                 <div className="content">
                   <h3>{it.job}</h3>
@@ -186,7 +188,7 @@ function About() {
                   <p>{it.desc}</p>
                   <ul>
                     {it.list.map((li) => (
-                      <li key={li.title}>
+                      <li key={li.id ?? li.title}>
                         <strong>
                           <CaretRight size={18} />
                         </strong>

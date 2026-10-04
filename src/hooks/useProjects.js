@@ -8,7 +8,7 @@ export function useProjects() {
   const locale = i18n.resolvedLanguage === 'en' ? 'en' : 'zh-TW';
   const [result, setResult] = useState(null);
   const projects = result?.locale === locale ? result.projects : getProjects(locale);
-  const baseUrl = import.meta.env.VITE_PROJECTS_API_BASE_URL;
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     if (!baseUrl) return;

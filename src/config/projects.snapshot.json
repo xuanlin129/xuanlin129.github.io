@@ -1,23 +1,95 @@
 {
   "zh-TW": [
     {
-      "id": "6ac0f5ee407aedcb69f0c7e8",
+      "id": "6ac113cf407aedcb69f0c7f5",
+      "slug": "dutchie",
+      "title": "Dutchie",
+      "path": "https://lin.ee/7R6k7nq",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/ddba2880-9691-4cda-a20c-375970940082-IrfBg0TjUmwx2nOcIhBcVxike0pTTg.jpg",
+      "imageAlt": "Dutchie 品牌標誌，白色背景搭配綠色與青色圖形",
+      "highlight": true
+    },
+    {
+      "id": "6ac1142c407aedcb69f0c7f6",
+      "slug": "shinhuade",
+      "title": "興樺德興業有限公司",
+      "path": "https://shinhuade.vercel.app",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/80dbd677-08ed-4201-b65d-a14d1ab6bd7c-bzCeQiEQO3rhbA7E3MoteoPUDszqwj.png",
+      "imageAlt": "興樺德興業有限公司網站首頁，以深藍色版面呈現粉體塗裝製程影像",
+      "highlight": true
+    },
+    {
+      "id": "6ac111c9407aedcb69f0c7f3",
       "slug": "xuanlin-website",
       "title": "林子軒 - 個人網站",
       "path": "https://xuanlin129.github.io",
-      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/34c94d08-e4d2-424d-9e09-197c2e87a05e-mwKLLMCFXtJRI0Sb2JJt14Xzf91w9j.png",
-      "imageAlt": "林子軒 - 個人網站",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/f79c0a06-e38d-4792-85ae-c0d8f866b193-ngbElSn4bwyADXacuiAhxhXuLhf2N3.png",
+      "imageAlt": "林子軒個人網站的頁面預覽",
+      "highlight": true
+    },
+    {
+      "id": "6ac110d2407aedcb69f0c7f2",
+      "slug": "gohan-cooking",
+      "title": "煮飯研究所",
+      "path": "https://xuanlin129.github.io/gohancooking",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/cf2e082a-e9ac-4b0b-b6a4-05e37352fb8e-D7QQ7UevujxhpuN0gjQcp6I8NUESba.jpg",
+      "imageAlt": "煮飯研究所網站首頁，呈現品牌標誌、料理照片與導覽選單",
+      "highlight": true
+    },
+    {
+      "id": "6ac10fbf407aedcb69f0c7f1",
+      "slug": "flip-clock",
+      "title": "翻頁鐘",
+      "path": "https://xuanlin129.github.io/flip-clock",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/3e1ce8e9-cf67-49fb-afa5-106510604feb-TzWrgpt6yR00J8AsAFAAu70vzeu6eT.png",
+      "imageAlt": "翻頁鐘網站畫面，白色背景搭配黑色時鐘卡片、日期與設定圖示",
       "highlight": false
     }
   ],
   "en": [
     {
-      "id": "6ac0f5ee407aedcb69f0c7e8",
+      "id": "6ac113cf407aedcb69f0c7f5",
+      "slug": "dutchie",
+      "title": "Dutchie",
+      "path": "https://lin.ee/7R6k7nq",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/ddba2880-9691-4cda-a20c-375970940082-IrfBg0TjUmwx2nOcIhBcVxike0pTTg.jpg",
+      "imageAlt": "Dutchie brand logo with green and cyan shapes on a white background",
+      "highlight": true
+    },
+    {
+      "id": "6ac1142c407aedcb69f0c7f6",
+      "slug": "shinhuade",
+      "title": "Shin Hua De Enterprise Co., Ltd.",
+      "path": "https://shinhuade.vercel.app",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/80dbd677-08ed-4201-b65d-a14d1ab6bd7c-bzCeQiEQO3rhbA7E3MoteoPUDszqwj.png",
+      "imageAlt": "Shin Hua De Enterprise homepage with a dark blue layout and powder coating process imagery",
+      "highlight": true
+    },
+    {
+      "id": "6ac111c9407aedcb69f0c7f3",
       "slug": "xuanlin-website",
-      "title": "林子軒 - 個人網站",
+      "title": "Xuan Lin - Personal Website",
       "path": "https://xuanlin129.github.io",
-      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/34c94d08-e4d2-424d-9e09-197c2e87a05e-mwKLLMCFXtJRI0Sb2JJt14Xzf91w9j.png",
-      "imageAlt": "林子軒 - 個人網站",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/f79c0a06-e38d-4792-85ae-c0d8f866b193-ngbElSn4bwyADXacuiAhxhXuLhf2N3.png",
+      "imageAlt": "Page preview of Xuan Lin’s personal website",
+      "highlight": true
+    },
+    {
+      "id": "6ac110d2407aedcb69f0c7f2",
+      "slug": "gohan-cooking",
+      "title": "Gohan Cooking",
+      "path": "https://xuanlin129.github.io/gohancooking",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/cf2e082a-e9ac-4b0b-b6a4-05e37352fb8e-D7QQ7UevujxhpuN0gjQcp6I8NUESba.jpg",
+      "imageAlt": "Gohan Cooking homepage showing the brand logo, food photography and navigation menu",
+      "highlight": true
+    },
+    {
+      "id": "6ac10fbf407aedcb69f0c7f1",
+      "slug": "flip-clock",
+      "title": "Flip Clock",
+      "path": "https://xuanlin129.github.io/flip-clock",
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/3e1ce8e9-cf67-49fb-afa5-106510604feb-TzWrgpt6yR00J8AsAFAAu70vzeu6eT.png",
+      "imageAlt": "Flip Clock interface with black clock cards, a date display and a settings icon on a white background",
       "highlight": false
     }
   ]

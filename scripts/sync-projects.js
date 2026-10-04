@@ -4,7 +4,7 @@ import { fetchPortfolioProjects } from '../src/services/project-api.js';
 
 const mode = process.argv.includes('--development') ? 'development' : 'production';
 const environment = loadEnv(mode, process.cwd(), 'VITE_');
-const baseUrl = environment.VITE_PROJECTS_API_BASE_URL;
+const baseUrl = environment.VITE_API_BASE_URL;
 const snapshot = {};
 if (baseUrl) {
   const results = await Promise.all(['zh-TW', 'en'].map((locale) => fetchPortfolioProjects(baseUrl, locale)));
