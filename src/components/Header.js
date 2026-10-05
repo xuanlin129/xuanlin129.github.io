@@ -219,7 +219,7 @@ const Logo = styled.img`
   }
 
   @media (min-width: 1200px) {
-    left: calc((100vw - 1200px) / 2 + var(--base-padding));
+    left: calc((100vw - 1440px) / 2 + var(--base-padding));
   }
 `;
 

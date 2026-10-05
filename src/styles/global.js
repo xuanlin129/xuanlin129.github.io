@@ -26,7 +26,7 @@ const style = css`
 
   .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 var(--base-padding);
   }

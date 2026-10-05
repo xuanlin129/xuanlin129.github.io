@@ -93,7 +93,7 @@ for (const [path] of pages) {
     if (path === '/portfolio') {
       const list = data['@graph'].find((item) => item['@type'] === 'ItemList');
       assert.deepEqual(list.itemListElement.map((project) => ({ name: project.name, url: project.url })),
-        publishedProjects.map((project) => ({ name: project.title, url: project.path })));
+        publishedProjects.map((project) => ({ name: project.title, url: `https://xuanlin129.github.io/portfolio/${project.slug}` })));
       list.itemListElement.forEach((project) => assert.ok(html.includes(project.name)));
     }
   });
@@ -111,4 +111,30 @@ test('static 404 is noindex and remains crawlable so the directive can be read',
   assert.match(html, /name="robots" content="noindex, follow"/);
   assert.doesNotMatch(html, /rel="canonical"|application\/ld\+json/);
   assert.doesNotMatch(robots, /Disallow: \/404/);
+});
+
+for (const project of publishedProjects) {
+  test(`project details render and prerender ${project.slug} with their own canonical URL`, async () => {
+    const path = `/portfolio/${project.slug}`;
+    const result = await render(path);
+    assert.equal(result.status, 200);
+    assert.ok(result.html.includes(project.title));
+    assert.ok(result.html.includes('專案詳情'));
+    assert.ok(result.html.includes('專案連結'));
+    assert.ok(result.html.includes(`href="${project.path}" target="_blank" rel="noopener noreferrer"`));
+    assert.doesNotMatch(result.html, /使用技術/);
+    assert.ok(result.head.includes(`${project.title}｜Xuan Lin`));
+    assert.ok(result.head.includes(`href="https://xuanlin129.github.io${path}"`));
+    assert.doesNotMatch(result.html, /PROJECT OVERVIEW|看看網站畫面|<figcaption/);
+    const html = await readFile(new URL(`../dist/client${path}.html`, import.meta.url), 'utf8');
+    assert.ok(html.includes(project.title));
+    const sitemap = await readFile(new URL('../dist/client/sitemap.xml', import.meta.url), 'utf8');
+    assert.ok(sitemap.includes(`https://xuanlin129.github.io${path}`));
+  });
+}
+
+test('unknown project details return a rendered noindex 404', async () => {
+  const result = await render('/portfolio/project-that-does-not-exist');
+  assert.equal(result.status, 404);
+  assert.match(result.head, /noindex/);
 });

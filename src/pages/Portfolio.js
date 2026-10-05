@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Row, Col, Pagination } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useProjects } from '../hooks/useProjects';
+import { handleLinkNavigation } from '../utils';
 
 function Portfolio() {
   const { t } = useTranslation();
@@ -63,19 +65,11 @@ function Portfolio() {
             {projects.map((it) => (
                   <Col span={24} md={12} lg={8} key={it.id}>
                     <Card className="card">
-                      <div
-                        className="image-box"
-                        onClick={() => {
-                          window.open(it.path);
-                        }}
-                      >
+                      <Link className="image-box" to={`/portfolio/${it.slug}`} aria-label={it.title} onClick={(event) => handleLinkNavigation(event, `/portfolio/${it.slug}`)}>
                         <img src={it.image} alt={it.imageAlt || it.title} loading="lazy" decoding="async" />
-                      </div>
+                      </Link>
                       <div className="content">
                         <h4>{it.title}</h4>
-                        <a href={it.path} target="_blank" rel="noopener noreferrer">
-                          {it.path}
-                        </a>
                       </div>
                     </Card>
                   </Col>
@@ -126,6 +120,7 @@ const Card = styled.div`
   width: 100%;
 
   .image-box {
+    display: block;
     width: 100%;
     aspect-ratio: 16/10;
     overflow: hidden;
@@ -154,27 +149,14 @@ const Card = styled.div`
   }
 
   .content {
+    text-align: center;
+
     h4 {
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--dark-gray-color);
       margin: 0;
       transition: color 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    a {
-      color: color-mix(in srgb, var(--dark-gray-color), transparent 40%);
-      font-size: 14px;
-      display: block;
-      word-break: break-all;
-      margin-top: 8px;
-
-      &:hover {
-        color: color-mix(in srgb, var(--secondary-color), transparent 10%);
-      }
     }
   }
 

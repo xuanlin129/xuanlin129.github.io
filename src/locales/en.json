@@ -180,5 +180,22 @@
       "description": "Contact front-end developer Xuan Lin about web and app projects, technical discussions, or full-time and part-time job opportunities through the contact form or email."
     },
     "aboutPortraitAlt": "Xuan Lin’s university graduation photo"
+  },
+  "projectDetails": {
+    "title": "PROJECT DETAILS",
+    "type": "TYPE",
+    "year": "YEAR",
+    "tasks": "TASKS",
+    "loading": "Loading project…",
+    "error": "Unable to load this project. Please try again later.",
+    "retry": "Retry",
+    "back": "Back to portfolio",
+    "types": {
+      "personal": "Personal project",
+      "client": "Client project",
+      "company": "Company project",
+      "collaboration": "Collaboration"
+    },
+    "link": "PROJECT LINK"
   }
 }

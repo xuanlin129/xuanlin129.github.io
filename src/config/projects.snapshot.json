@@ -5,7 +5,15 @@
       "slug": "dutchie",
       "title": "Dutchie",
       "path": "https://lin.ee/7R6k7nq",
-      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/f483a36a-58ce-4451-8836-3be211fed688-zE1X1sCJu9Pz4tcWnLl0VGR1uOmBVT.jpg",
+      "summary": "Dutchie 作品展示，提供 LINE 連結作為作品入口。",
+      "projectType": "personal",
+      "projectYear": 2026,
+      "taskTags": [
+        "介面設計",
+        "前端開發",
+        "後端開發"
+      ],
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/7ad568db-48c5-454f-aa44-26e64db130bc-NlrbtROKIaTQ5x4GtCL38QtngphaNH.png",
       "imageAlt": "Dutchie 品牌標誌，白色背景搭配綠色與青色圖形",
       "highlight": true
     },
@@ -14,6 +22,10 @@
       "slug": "shinhuade",
       "title": "興樺德興業有限公司",
       "path": "https://shinhuade.vercel.app",
+      "summary": "興樺德興業有限公司的企業形象網站，介紹粉體塗裝服務、公司資訊與產品製程，並提供常見問題及聯絡資訊。",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/80dbd677-08ed-4201-b65d-a14d1ab6bd7c-bzCeQiEQO3rhbA7E3MoteoPUDszqwj.png",
       "imageAlt": "興樺德興業有限公司網站首頁，以深藍色版面呈現粉體塗裝製程影像",
       "highlight": true
@@ -23,6 +35,10 @@
       "slug": "xuanlin-website",
       "title": "林子軒 - 個人網站",
       "path": "https://xuanlin129.github.io",
+      "summary": "林子軒的個人網站，整合個人簡介、專業技能、工作經歷、作品集與聯絡表單，支援中英文切換，呈現前端開發與網頁設計能力。",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/f79c0a06-e38d-4792-85ae-c0d8f866b193-ngbElSn4bwyADXacuiAhxhXuLhf2N3.png",
       "imageAlt": "林子軒個人網站的頁面預覽",
       "highlight": true
@@ -32,6 +48,10 @@
       "slug": "gohan-cooking",
       "title": "煮飯研究所",
       "path": "https://xuanlin129.github.io/gohancooking",
+      "summary": "以料理為主題的網站作品，呈現菜單、美味專區、廚藝教室與品牌介紹，透過料理影像與版面設計傳達餐飲品牌風格。",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/cf2e082a-e9ac-4b0b-b6a4-05e37352fb8e-D7QQ7UevujxhpuN0gjQcp6I8NUESba.jpg",
       "imageAlt": "煮飯研究所網站首頁，呈現品牌標誌、料理照片與導覽選單",
       "highlight": true
@@ -41,6 +61,10 @@
       "slug": "flip-clock",
       "title": "翻頁鐘",
       "path": "https://xuanlin129.github.io/flip-clock",
+      "summary": "以翻頁鐘造型呈現時間的網頁作品，搭配日期顯示與簡潔的黑白介面，展現時鐘主題",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/3e1ce8e9-cf67-49fb-afa5-106510604feb-TzWrgpt6yR00J8AsAFAAu70vzeu6eT.png",
       "imageAlt": "翻頁鐘網站畫面，白色背景搭配黑色時鐘卡片、日期與設定圖示",
       "highlight": false
@@ -52,7 +76,15 @@
       "slug": "dutchie",
       "title": "Dutchie",
       "path": "https://lin.ee/7R6k7nq",
-      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/f483a36a-58ce-4451-8836-3be211fed688-zE1X1sCJu9Pz4tcWnLl0VGR1uOmBVT.jpg",
+      "summary": "A portfolio entry for Dutchie, with a LINE link as its access point.",
+      "projectType": "personal",
+      "projectYear": 2026,
+      "taskTags": [
+        "UI Design",
+        "Frontend Development",
+        "Backend Development"
+      ],
+      "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/7ad568db-48c5-454f-aa44-26e64db130bc-NlrbtROKIaTQ5x4GtCL38QtngphaNH.png",
       "imageAlt": "Dutchie brand logo with green and cyan shapes on a white background",
       "highlight": true
     },
@@ -61,6 +93,10 @@
       "slug": "shinhuade",
       "title": "Shin Hua De Enterprise Co., Ltd.",
       "path": "https://shinhuade.vercel.app",
+      "summary": "A corporate website for Shin Hua De Enterprise Co., Ltd., presenting powder coating services, company information and production processes, alongside frequently asked questions and contact information.",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/80dbd677-08ed-4201-b65d-a14d1ab6bd7c-bzCeQiEQO3rhbA7E3MoteoPUDszqwj.png",
       "imageAlt": "Shin Hua De Enterprise homepage with a dark blue layout and powder coating process imagery",
       "highlight": true
@@ -70,6 +106,10 @@
       "slug": "xuanlin-website",
       "title": "Xuan Lin - Personal Website",
       "path": "https://xuanlin129.github.io",
+      "summary": "Xuan Lin’s personal website bringing together an introduction, skills, work experience, portfolio and contact form, with Chinese and English language options to showcase frontend development and web design skills.",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/f79c0a06-e38d-4792-85ae-c0d8f866b193-ngbElSn4bwyADXacuiAhxhXuLhf2N3.png",
       "imageAlt": "Page preview of Xuan Lin’s personal website",
       "highlight": true
@@ -79,6 +119,10 @@
       "slug": "gohan-cooking",
       "title": "Gohan Cooking",
       "path": "https://xuanlin129.github.io/gohancooking",
+      "summary": "A cooking-themed website featuring a menu, food section, cooking classroom and brand introduction, with food imagery and a layout that express the brand’s identity.",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/cf2e082a-e9ac-4b0b-b6a4-05e37352fb8e-D7QQ7UevujxhpuN0gjQcp6I8NUESba.jpg",
       "imageAlt": "Gohan Cooking homepage showing the brand logo, food photography and navigation menu",
       "highlight": true
@@ -88,6 +132,10 @@
       "slug": "flip-clock",
       "title": "Flip Clock",
       "path": "https://xuanlin129.github.io/flip-clock",
+      "summary": "A web project displaying time in a flip-clock style, paired with a date display and a simple black-and-white interface to showcase clock-themed visual design.",
+      "projectType": null,
+      "projectYear": null,
+      "taskTags": [],
       "image": "https://navxmbxx5574vbxp.public.blob.vercel-storage.com/projects/3e1ce8e9-cf67-49fb-afa5-106510604feb-TzWrgpt6yR00J8AsAFAAu70vzeu6eT.png",
       "imageAlt": "Flip Clock interface with black clock cards, a date display and a settings icon on a white background",
       "highlight": false

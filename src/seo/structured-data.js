@@ -26,7 +26,7 @@ function createProjectList(t, language) {
       '@type': 'ListItem',
       position: index + 1,
       name: project.title,
-      url: project.path,
+      url: new URL(`/portfolio/${project.slug}`, site.url).href,
     })),
   };
 }

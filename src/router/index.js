@@ -1,8 +1,9 @@
-import { matchRoutes } from 'react-router-dom';
+import { getProjects } from '../config/projects';
+import { data, matchRoutes } from 'react-router-dom';
 import Helmet from '../components/Helmet';
 import Layout from '../layouts/Layout';
 
-export const prerenderPaths = ['/', '/about', '/portfolio', '/contact'];
+export const prerenderPaths = ['/', '/about', '/portfolio', '/contact', ...getProjects().map((project) => `/portfolio/${project.slug}`)];
 
 function createPageRoute(path, title, loadPage) {
   return {
@@ -23,6 +24,14 @@ export async function createRoutes(url) {
         createPageRoute('/', 'home', () => import('../pages/Home')),
         createPageRoute('about', 'about', () => import('../pages/About')),
         createPageRoute('portfolio', 'portfolio', () => import('../pages/Portfolio')),
+        {
+          path: 'portfolio/:slug',
+          loader: ({ params }) => data(null, { status: getProjects().some((project) => project.slug === params.slug) ? 200 : 404 }),
+          async lazy() {
+            const { default: ProjectDetails } = await import('../pages/ProjectDetails');
+            return { element: <ProjectDetails /> };
+          },
+        },
         createPageRoute('contact', 'contact', () => import('../pages/Contact')),
       ],
     },

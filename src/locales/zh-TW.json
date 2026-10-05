@@ -180,5 +180,22 @@
       "description": "聯繫前端工程師林子軒（Xuan Lin），討論網頁與 App 專案開發、技術交流或正職／兼職面試邀約。可透過聯絡表單或電子郵件說明需求。"
     },
     "aboutPortraitAlt": "林子軒的大學畢業照"
+  },
+  "projectDetails": {
+    "title": "專案詳情",
+    "type": "專案類型",
+    "year": "年份",
+    "tasks": "任務標籤",
+    "loading": "載入專案中…",
+    "error": "目前無法載入專案，請稍後再試。",
+    "retry": "重新載入",
+    "back": "返回作品集",
+    "types": {
+      "personal": "個人專案",
+      "client": "客戶專案",
+      "company": "公司專案",
+      "collaboration": "共同協作"
+    },
+    "link": "專案連結"
   }
 }
