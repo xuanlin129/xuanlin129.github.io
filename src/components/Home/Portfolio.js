@@ -17,7 +17,7 @@ export default function Portfolio() {
   const projects = useProjects();
   const screens = useBreakpoint();
   const portfolioRef = React.useRef();
-  const [autoPlay, setAutoPlay] = React.useState(false);
+  const [_, setAutoPlay] = React.useState(false);
 
   React.useEffect(() => {
     if (!portfolioRef.current) return;
@@ -43,30 +43,34 @@ export default function Portfolio() {
         {screens.md && <CtaButton target="/portfolio" />}
       </div>
 
-      <StyledMarquee speed={100} autoFill play={autoPlay}>
+      <StyledMarquee speed={100} autoFill play={true}>
         {projects
           .filter((it) => it.highlight)
           ?.map((work) => {
             return (
               <div key={work.id} className="marquee-item-wrapper">
-                <Link to={`/portfolio/${work.slug}`} aria-label={work.title} onClick={(event) => handleLinkNavigation(event, `/portfolio/${work.slug}`)}>
-                <StyledCard
-                  hoverable
-                  cover={
-                    <div className="image-cover">
-                      <img
-                        draggable={false}
-                        alt={work.imageAlt || work.title}
-                        loading="lazy"
-                        decoding="async"
-                        src={work.image}
-                      />
-                      <div className="mask">View Project</div>
-                    </div>
-                  }
+                <Link
+                  to={`/portfolio/${work.slug}`}
+                  aria-label={work.title}
+                  onClick={(event) => handleLinkNavigation(event, `/portfolio/${work.slug}`)}
                 >
-                  <Ant.Card.Meta title={work.title} />
-                </StyledCard>
+                  <StyledCard
+                    hoverable
+                    cover={
+                      <div className="image-cover">
+                        <img
+                          draggable={false}
+                          alt={work.imageAlt || work.title}
+                          loading="lazy"
+                          decoding="async"
+                          src={work.image}
+                        />
+                        <div className="mask">View Project</div>
+                      </div>
+                    }
+                  >
+                    <Ant.Card.Meta title={work.title} />
+                  </StyledCard>
                 </Link>
               </div>
             );

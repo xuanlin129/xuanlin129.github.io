@@ -6,15 +6,26 @@ import { createStructuredData, serializeStructuredData } from '../seo/structured
 function PageWithHelmet({ title, children, project }) {
   const { t, i18n } = useTranslation();
   const isNotFound = title === 'notFound';
-  const pageTitle = project ? `${project.title}｜${site.name}` : isNotFound ? `${t('notFound.title')} - ${site.name}` : t(`seo.${title}.title`);
+  const pageTitle = project
+    ? `${project.title}｜${site.personName} ${site.name}`
+    : isNotFound
+      ? `${t('notFound.title')} - ${site.name}`
+      : t(`seo.${title}.title`);
   const description = project?.summary || (isNotFound ? t('notFound.message') : t(`seo.${title}.description`));
   const url = project ? new URL(`/portfolio/${project.slug}`, site.url).href : getPageUrl(title);
   const language = i18n.resolvedLanguage || 'zh-TW';
-  const structuredData = project ? {
-    '@context': 'https://schema.org', '@type': 'CreativeWork',
-    name: project.title, description, url, image: project.image,
-    inLanguage: language, author: { '@type': 'Person', name: site.personName },
-  } : createStructuredData(title, t, language);
+  const structuredData = project
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: project.title,
+        description,
+        url,
+        image: project.image,
+        inLanguage: language,
+        author: { '@type': 'Person', name: site.personName },
+      }
+    : createStructuredData(title, t, language);
 
   return (
     <>
