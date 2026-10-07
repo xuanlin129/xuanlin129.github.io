@@ -5,6 +5,29 @@ import { getOutlet } from 'reconnect.js';
 import '../src/stores/index.js';
 import { navigate, setRouter, handleLinkNavigation } from '../src/utils/index.js';
 
+test('navigation waits for the transition before loading the route', async (t) => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  let hasStarted = false;
+  setRouter({
+    state: { location: { pathname: '/' } },
+    async navigate() { hasStarted = true; },
+  });
+  try {
+    const navigation = navigate('/about');
+    assert.equal(hasStarted, false);
+    t.mock.timers.tick(499);
+    await Promise.resolve();
+    assert.equal(hasStarted, false);
+    t.mock.timers.tick(1);
+    await Promise.resolve();
+    assert.equal(hasStarted, true);
+    await navigation;
+    t.mock.timers.tick(0);
+  } finally {
+    setRouter(undefined);
+  }
+});
+
 for (const shouldFail of [false, true]) {
   test(`navigation clears loading after ${shouldFail ? 'failure' : 'success'}`, async () => {
     const loadingOutlet = getOutlet('loading');

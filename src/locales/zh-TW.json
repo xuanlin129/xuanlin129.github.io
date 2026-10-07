@@ -184,6 +184,7 @@
   "projectDetails": {
     "gallery": "作品圖集",
     "openImage": "放大圖片 {{index}}",
+    "loadingPreview": "正在載入圖片預覽…",
     "title": "專案詳情",
     "type": "專案類型",
     "year": "年份",

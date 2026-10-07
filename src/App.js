@@ -12,11 +12,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 function App({ helmetContext, children }) {
   const { i18n } = useTranslation();
   React.useEffect(() => {
-    const timer = setTimeout(() => {
-      getOutlet('loading').update({ loading: false });
-    }, 500);
-
-    return () => clearTimeout(timer);
+    getOutlet('loading').update({ loading: false });
   }, []);
 
   React.useEffect(() => {

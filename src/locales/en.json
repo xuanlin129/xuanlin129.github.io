@@ -184,6 +184,7 @@
   "projectDetails": {
     "gallery": "Project gallery",
     "openImage": "Enlarge image {{index}}",
+    "loadingPreview": "Loading image preview…",
     "title": "PROJECT DETAILS",
     "type": "TYPE",
     "year": "YEAR",

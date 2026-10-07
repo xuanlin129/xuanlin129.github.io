@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Image } from 'antd';
+import { lazy, Suspense, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+
+const ProjectGalleryPreview = lazy(() => import('./ProjectGalleryPreview'));
 
 function groupGalleryImages(images) {
   const rows = [];
@@ -15,11 +16,18 @@ export default function ProjectGallery({ images = [] }) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
+  const previewTriggerRef = useRef(null);
   if (!images.length) return null;
 
-  function openPreview(index) {
+  function openPreview(index, trigger) {
+    previewTriggerRef.current = trigger;
     setCurrent(index);
     setIsOpen(true);
+  }
+
+  function closePreview() {
+    setIsOpen(false);
+    previewTriggerRef.current?.focus();
   }
 
   return (
@@ -30,22 +38,22 @@ export default function ProjectGallery({ images = [] }) {
           <span className="gallery-heading-dot" aria-hidden="true">.</span>
         </h2>
       </div>
-      <Image.PreviewGroup
-        items={images.map(({ url }) => ({ src: url, alt: '' }))}
-        preview={{ open: isOpen, current, onOpenChange: setIsOpen, onChange: setCurrent }}
-      >
-        <div className="gallery-grid">
-          {groupGalleryImages(images).map((row, rowIndex) => (
-            <div key={row.images[0].id} className={`gallery-row${rowIndex % 2 === 1 ? ' gallery-row--reversed' : ''}${row.images.length === 1 ? ' gallery-row--single' : ''}`}>
-              {row.images.map((image, index) => (
-                <button key={image.id} type="button" className="gallery-image" aria-label={t('projectDetails.openImage', { index: row.startIndex + index + 1 })} onClick={() => openPreview(row.startIndex + index)}>
-                  <img src={image.url} alt="" loading="lazy" decoding="async" />
-                </button>
-              ))}
-            </div>
-          ))}
-        </div>
-      </Image.PreviewGroup>
+      <div className="gallery-grid">
+        {groupGalleryImages(images).map((row, rowIndex) => (
+          <div key={row.images[0].id} className={`gallery-row${rowIndex % 2 === 1 ? ' gallery-row--reversed' : ''}${row.images.length === 1 ? ' gallery-row--single' : ''}`}>
+            {row.images.map((image, index) => (
+              <button key={image.id} type="button" className="gallery-image" aria-label={t('projectDetails.openImage', { index: row.startIndex + index + 1 })} onClick={(event) => openPreview(row.startIndex + index, event.currentTarget)}>
+                <img src={image.url} alt="" loading="lazy" decoding="async" />
+              </button>
+            ))}
+          </div>
+        ))}
+      </div>
+      {isOpen && (
+        <Suspense fallback={<div className="gallery-preview-loading" role="status">{t('projectDetails.loadingPreview')}</div>}>
+          <ProjectGalleryPreview images={images} current={current} onChange={setCurrent} onClose={closePreview} />
+        </Suspense>
+      )}
     </Wrapper>
   );
 }
@@ -76,6 +84,18 @@ const Wrapper = styled.section`
   }
   .gallery-heading-dot {
     color: var(--secondary-color);
+  }
+  .gallery-preview-loading {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1002;
+    padding: 12px 20px;
+    border: 1px solid #d5d7d1;
+    border-radius: 999px;
+    background: white;
+    font-size: 14px;
   }
   .gallery-grid {
     display: grid;
