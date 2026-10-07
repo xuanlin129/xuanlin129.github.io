@@ -47,3 +47,17 @@ test('successful sync replaces both locales and preserves an empty published lis
     'zh-TW': [{ id: 'published' }], en: [],
   });
 });
+
+test('snapshots preserve each locale gallery and its display order', async (t) => {
+  const { destination } = await createSnapshot(t);
+  const galleries = {
+    'zh-TW': [{ id: 'second', url: 'https://images.example.com/zh-second.webp' }, { id: 'first', url: 'https://images.example.com/zh-first.webp' }],
+    en: [{ id: 'english', url: 'https://images.example.com/en.webp' }],
+  };
+  await syncApiSnapshot({
+    baseUrl: 'https://api.example.com', destination, label: '作品',
+    fetchRecords: async (_url, locale) => [{ id: 'project', galleryImages: galleries[locale] }],
+  });
+  const snapshot = JSON.parse(await readFile(destination, 'utf8'));
+  for (const locale of ['zh-TW', 'en']) assert.deepEqual(snapshot[locale][0].galleryImages, galleries[locale]);
+});

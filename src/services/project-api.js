@@ -1,5 +1,21 @@
 const projectTypes = ['personal', 'client', 'company', 'collaboration'];
 
+function readGalleryImages(value) {
+  if (value === undefined) return [];
+  if (!Array.isArray(value) || value.length > 20) throw new Error('作品 API 回傳的圖集格式不正確');
+  const ids = new Set();
+  return value.map((image) => {
+    if (!image || typeof image.id !== 'string' || !image.id.trim() || ids.has(image.id)) {
+      throw new Error('作品 API 回傳的圖集圖片 ID 不正確');
+    }
+    if (typeof image.url !== 'string' || !['http:', 'https:'].includes(new URL(image.url).protocol)) {
+      throw new Error('作品 API 回傳的圖集網址不正確');
+    }
+    ids.add(image.id);
+    return { id: image.id, url: image.url };
+  });
+}
+
 function readStringList(value) {
   if (value === undefined) return [];
   if (!Array.isArray(value) || value.some((item) => typeof item !== 'string' || !item.trim())) {
@@ -32,6 +48,7 @@ export function toPortfolioProject(project) {
     taskTags: readStringList(project.taskTags),
     image: project.coverImageUrl,
     imageAlt: project.coverImageAlt || project.title,
+    galleryImages: readGalleryImages(project.galleryImages),
     highlight: project.isFeatured === true,
   };
 }

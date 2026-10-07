@@ -4,6 +4,7 @@ import { Button, Spin, Tag } from 'antd';
 import styled from 'styled-components';
 import Helmet from '../components/Helmet';
 import NotFound from './NotFound';
+import ProjectGallery from '../components/ProjectGallery';
 import { useProjectDetails } from '../hooks/useProjectDetails';
 import { handleLinkNavigation } from '../utils';
 
@@ -57,7 +58,7 @@ function ProjectMetadata({ project }) {
 
 export default function ProjectDetails() {
   const { slug } = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { project, status, retry } = useProjectDetails(slug);
   if (status === 'notFound')
     return (
@@ -112,6 +113,7 @@ export default function ProjectDetails() {
               <ProjectMetadata project={project} />
             </div>
           </section>
+          <ProjectGallery key={`${project.slug}:${i18n.resolvedLanguage}`} images={project.galleryImages} />
         </div>
       </Wrapper>
     </Helmet>

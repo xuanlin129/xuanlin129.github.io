@@ -182,6 +182,8 @@
     "aboutPortraitAlt": "林子軒的大學畢業照"
   },
   "projectDetails": {
+    "gallery": "作品圖集",
+    "openImage": "放大圖片 {{index}}",
     "title": "專案詳情",
     "type": "專案類型",
     "year": "年份",
