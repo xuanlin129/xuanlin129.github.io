@@ -1,10 +1,7 @@
 import { css, createGlobalStyle } from 'styled-components';
 import theme from '../config/theme';
-import LINESeedTWRg from '../assets/fonts/LINESeedTW_Rg.woff2';
-import LINESeedTWBd from '../assets/fonts/LINESeedTW_Bd.woff2';
-import LINESeedSansRg from '../assets/fonts/LINESeedSans_Rg.woff2';
-import LINESeedSansBd from '../assets/fonts/LINESeedSans_Bd.woff2';
-import LINESeedSansHe from '../assets/fonts/LINESeedSans_He.woff2';
+
+const fontCdnBaseUrl = 'https://cdn.jsdelivr.net/gh/xuanlin129/xuanlin129.github.io@f714478257c6711e41bb32a567417dfc3506df6a/src/assets/fonts';
 
 const style = css`
   :root {
@@ -66,42 +63,42 @@ const style = css`
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'TW_Rg';
-    src: url(${LINESeedTWRg}) format('woff2');
+    src: url(${fontCdnBaseUrl}/LINESeedTW_Rg.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
     font-family: 'TW_Bd';
-    src: url(${LINESeedTWBd}) format('woff2');
+    src: url(${fontCdnBaseUrl}/LINESeedTW_Bd.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
     font-family: 'EN_Rg';
-    src: url(${LINESeedSansRg}) format('woff2');
+    src: url(${fontCdnBaseUrl}/LINESeedSans_Rg.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
     font-family: 'EN_Bd';
-    src: url(${LINESeedSansBd}) format('woff2');
+    src: url(${fontCdnBaseUrl}/LINESeedSans_Bd.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
     font-family: 'EN_He';
-    src: url(${LINESeedSansHe}) format('woff2');
+    src: url(${fontCdnBaseUrl}/LINESeedSans_He.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   ${style}

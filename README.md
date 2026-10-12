@@ -157,3 +157,7 @@ VITE_API_BASE_URL=https://your-xuanlin-website.vercel.app
 後台 `/admin/experiences` 管理經歷；公開 API `/api/experiences?locale=zh-TW` 僅回傳 `isPublished: true`，依 `startMonth`、ID 由舊到新排列。
 
 沿用上方的 `VITE_API_BASE_URL`，開發與建置會取得中英文經歷快照，瀏覽器也會更新經歷。未設定 API 時，開發啟動與建置皆會停止；API 回傳空陣列時不顯示經歷，不會退回舊資料。前台翻譯檔只保留介面文字，不再維護工作經歷。API 失敗時保留建置資料；GitHub Pages 的靜態 HTML 需重新建置才會更新。
+
+### 字體 CDN
+
+字體使用 jsDelivr 讀取本儲存庫固定版本 `f714478257c6711e41bb32a567417dfc3506df6a` 的 WOFF2，網址設定在 `src/styles/global.js`，維持 `font-display: block`。目前專案不保留本地字體檔；歷史版本的字體仍可由 CDN 取得。中文字體為完整字集，切換 CDN 不會縮小檔案大小。更新字體時需先發布新檔，再更新固定版本網址。
