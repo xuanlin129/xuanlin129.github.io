@@ -1,10 +1,10 @@
 import { css, createGlobalStyle } from 'styled-components';
 import theme from '../config/theme';
-import LINESeedTWRg from '../assets/fonts/LINESeedTW_Rg.ttf';
-import LINESeedTWBd from '../assets/fonts/LINESeedTW_Bd.ttf';
-import LINESeedSansRg from '../assets/fonts/LINESeedSans_Rg.ttf';
-import LINESeedSansBd from '../assets/fonts/LINESeedSans_Bd.ttf';
-import LINESeedSansHe from '../assets/fonts/LINESeedSans_He.ttf';
+import LINESeedTWRg from '../assets/fonts/LINESeedTW_Rg.woff2';
+import LINESeedTWBd from '../assets/fonts/LINESeedTW_Bd.woff2';
+import LINESeedSansRg from '../assets/fonts/LINESeedSans_Rg.woff2';
+import LINESeedSansBd from '../assets/fonts/LINESeedSans_Bd.woff2';
+import LINESeedSansHe from '../assets/fonts/LINESeedSans_He.woff2';
 
 const style = css`
   :root {
@@ -66,42 +66,42 @@ const style = css`
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'TW_Rg';
-    src: url(${LINESeedTWRg}) format('truetype');
+    src: url(${LINESeedTWRg}) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'TW_Bd';
-    src: url(${LINESeedTWBd}) format('truetype');
+    src: url(${LINESeedTWBd}) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'EN_Rg';
-    src: url(${LINESeedSansRg}) format('truetype');
+    src: url(${LINESeedSansRg}) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'EN_Bd';
-    src: url(${LINESeedSansBd}) format('truetype');
+    src: url(${LINESeedSansBd}) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'EN_He';
-    src: url(${LINESeedSansHe}) format('truetype');
+    src: url(${LINESeedSansHe}) format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    font-display: swap;
   }
 
   ${style}

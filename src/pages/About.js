@@ -1,4 +1,4 @@
-import graduationImage from '@/assets/graduation.png';
+import graduationImage from '@/assets/graduation.webp';
 import React from 'react';
 import { useExperiences } from '../hooks/useExperiences';
 import styled from 'styled-components';

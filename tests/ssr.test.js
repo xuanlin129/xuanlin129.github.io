@@ -138,3 +138,17 @@ test('unknown project details return a rendered noindex 404', async () => {
   assert.equal(result.status, 404);
   assert.match(result.head, /noindex/);
 });
+
+test('prerendered pages preserve initial loading and reference deployable WOFF2 fonts', async () => {
+  const html = await readFile(new URL('../dist/client/index.html', import.meta.url), 'utf8');
+  assert.match(html, /data-loading="true"/);
+  const fontFaces = html.match(/@font-face\{[^}]+\}/g) ?? [];
+  assert.equal(fontFaces.length, 5);
+  for (const face of fontFaces) {
+    assert.match(face, /font-display:swap/);
+    const assetPath = face.match(/url\((\/assets\/[^)]+\.woff2)\)/)?.[1];
+    assert.ok(assetPath, 'font must use a deployed WOFF2 asset');
+    const asset = await stat(new URL(`../dist/client${assetPath}`, import.meta.url));
+    assert.ok(asset.size > 0);
+  }
+});
