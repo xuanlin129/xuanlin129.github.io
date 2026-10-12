@@ -1,7 +1,7 @@
 import { css, createGlobalStyle } from 'styled-components';
 import theme from '../config/theme';
 
-const fontCdnBaseUrl = 'https://cdn.jsdelivr.net/gh/xuanlin129/xuanlin129.github.io@f714478257c6711e41bb32a567417dfc3506df6a/src/assets/fonts';
+const fontCdnBaseUrl = 'https://cdn.jsdelivr.net/gh/xuanlin129/xuanlin129.github.io@main/src/assets/fonts';
 
 const style = css`
   :root {

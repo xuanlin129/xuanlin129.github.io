@@ -160,4 +160,4 @@ VITE_API_BASE_URL=https://your-xuanlin-website.vercel.app
 
 ### 字體 CDN
 
-字體使用 jsDelivr 讀取本儲存庫固定版本 `f714478257c6711e41bb32a567417dfc3506df6a` 的 WOFF2，網址設定在 `src/styles/global.js`，維持 `font-display: block`。目前專案不保留本地字體檔；歷史版本的字體仍可由 CDN 取得。中文字體為完整字集，切換 CDN 不會縮小檔案大小。更新字體時需先發布新檔，再更新固定版本網址。
+字體使用 jsDelivr 讀取本儲存庫 `main` 分支的 WOFF2，網址設定在 `src/styles/global.js`，維持 `font-display: block`。專案保留 `src/assets/fonts/` 原始 WOFF2 備份，網站仍從 CDN 載入；本地備份不會被打包到網站。中文字體為完整字集，切換 CDN 不會縮小檔案大小。更新字體後需提交並推送到 `main`；CDN 快取更新後會提供新版字體。

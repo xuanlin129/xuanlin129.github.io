@@ -139,7 +139,7 @@ test('unknown project details return a rendered noindex 404', async () => {
   assert.match(result.head, /noindex/);
 });
 
-test('prerendered pages preserve initial loading and load versioned CDN fonts', async () => {
+test('prerendered pages preserve initial loading and load CDN fonts from main', async () => {
   const html = await readFile(new URL('../dist/client/index.html', import.meta.url), 'utf8');
   assert.match(html, /data-loading="true"/);
   assert.match(html, /rel="preconnect" href="https:\/\/cdn\.jsdelivr\.net" crossorigin/);
@@ -147,7 +147,7 @@ test('prerendered pages preserve initial loading and load versioned CDN fonts', 
   assert.equal(fontFaces.length, 5);
   for (const face of fontFaces) {
     assert.match(face, /font-display:block/);
-    assert.match(face, /url\(https:\/\/cdn\.jsdelivr\.net\/gh\/xuanlin129\/xuanlin129\.github\.io@[a-f0-9]{40}\/src\/assets\/fonts\/LINESeed[^)]+\.woff2\)/);
+    assert.match(face, /url\(https:\/\/cdn\.jsdelivr\.net\/gh\/xuanlin129\/xuanlin129\.github\.io@main\/src\/assets\/fonts\/LINESeed[^)]+\.woff2\)/);
     assert.doesNotMatch(face, /url\(\/assets\//);
   }
 });
