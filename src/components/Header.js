@@ -218,7 +218,7 @@ const Logo = styled.img`
     opacity: 0.8;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1440px) {
     left: calc((100vw - 1440px) / 2 + var(--base-padding));
   }
 `;
