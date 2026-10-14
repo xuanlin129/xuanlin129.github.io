@@ -1,20 +1,24 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import * as AppActions from '../utils';
+import { useOutlet } from 'reconnect.js';
 
 function HeroGraphic(props) {
   const { style = { width: '100%' }, color = 'var(--primary-color)' } = props;
+  const [{ loading }] = useOutlet('loading');
+  const [{ isComplete }] = useOutlet('loadingTransition');
+  const canAnimate = !loading && isComplete;
   const eyesRef = React.useRef([]);
-  const isAnimatingRef = React.useRef(true);
+  const isBlinkCompleteRef = React.useRef(false);
 
   React.useEffect(() => {
-    // Animation duration is 1s + 0.5s delay = 1.5s
-    const timer = setTimeout(() => {
-      isAnimatingRef.current = false;
-    }, 3000);
+    isBlinkCompleteRef.current = false;
+    if (!canAnimate) {
+      eyesRef.current.forEach((eye) => eye?.style.removeProperty('transform'));
+      return;
+    }
 
     const handleMouseMove = (e) => {
-      if (isAnimatingRef.current) return;
+      if (!isBlinkCompleteRef.current) return;
 
       eyesRef.current.forEach((eye) => {
         if (!eye) return;
@@ -48,12 +52,16 @@ function HeroGraphic(props) {
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      clearTimeout(timer);
     };
-  }, []);
+  }, [canAnimate]);
+
+  const handleBlinkEnd = (event) => {
+    if (event.target !== event.currentTarget || !canAnimate) return;
+    isBlinkCompleteRef.current = true;
+  };
 
   return (
-    <Container style={style}>
+    <Container style={style} $canAnimate={canAnimate}>
       <svg viewBox="0 0 95 111" style={{ width: '100%', position: 'relative' }}>
         <use href="#icon-fany" style={{ fill: color }} />
       </svg>
@@ -65,7 +73,7 @@ function HeroGraphic(props) {
           <div className="pupil" ref={(el) => (eyesRef.current[1] = el)} />
         </div>
       </div>
-      <div className="eye-close">
+      <div className="eye-close" onAnimationEnd={handleBlinkEnd}>
         <svg viewBox="0 0 64 11" style={{ width: '100%' }}>
           <use href="#fany_eye_close" style={{ fill: '#000' }} />
         </svg>
@@ -132,7 +140,8 @@ const Container = styled.div`
         border-radius: 50%;
         z-index: 99;
         transition: transform 0.3s linear;
-        animation: ${closeEyes} 1s linear 2s;
+        animation: ${closeEyes} 1s linear;
+        animation-name: ${(props) => (props.$canAnimate ? closeEyes : 'none')};
       }
     }
   }
@@ -145,7 +154,8 @@ const Container = styled.div`
     left: 50%;
     transform: translate(-55%, 0);
     opacity: 0;
-    animation: ${doubleBlink} 1s linear 2s;
+    animation: ${doubleBlink} 1s linear;
+    animation-name: ${(props) => (props.$canAnimate ? doubleBlink : 'none')};
   }
 `;
 

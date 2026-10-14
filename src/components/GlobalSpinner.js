@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { useOutlet } from 'reconnect.js';
+import { getOutlet, useOutlet } from 'reconnect.js';
 
 export default function GlobalSpinner() {
   const [info = {}] = useOutlet('loading');
@@ -9,6 +9,7 @@ export default function GlobalSpinner() {
 
   React.useEffect(() => {
     if (loading) {
+      getOutlet('loadingTransition').update({ isComplete: false });
       setVisible(true);
     } else {
       const timer = setTimeout(() => {
@@ -48,8 +49,20 @@ export default function GlobalSpinner() {
     };
   }, [visible]);
 
+  const handleTransitionEnd = (event) => {
+    if (event.target !== event.currentTarget || event.propertyName !== 'clip-path') return;
+    if (loading || visible) return;
+
+    getOutlet('loadingTransition').update({ isComplete: true });
+  };
+
   return (
-    <Wrapper $visible={visible} aria-hidden={!visible} data-loading={visible}>
+    <Wrapper
+      $visible={visible}
+      aria-hidden={!visible}
+      data-loading={visible}
+      onTransitionEnd={handleTransitionEnd}
+    >
       <Loading>
         <div className="message">
           {(message || 'Loading').split('').map((char, index) => (
