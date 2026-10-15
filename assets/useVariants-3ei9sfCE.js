@@ -1,0 +1,1 @@
+import{r as e,q as l,aV as V,bR as u}from"./index-BXPh-hdu.js";const x=(a,n,o)=>{const{variant:s,[a]:r}=e.useContext(l),i=e.useContext(V),c=r?.variant;let t;typeof n<"u"?t=n:o===!1?t="borderless":t=i??c??s??"outlined";const f=u.includes(t);return[t,f]};export{x as u};
